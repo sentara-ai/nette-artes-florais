@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <!-- Background -->
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9a5449"/>
+      <stop offset="55%" style="stop-color:#b86b5c"/>
+      <stop offset="100%" style="stop-color:#cc8070"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+
+  <!-- Subtle border frame -->
+  <rect x="36" y="36" width="1128" height="558" rx="16" fill="none" stroke="#faf6f0" stroke-opacity="0.15" stroke-width="1.5"/>
+
+  <!-- Decorative corner florals (simple geometric) -->
+  <circle cx="80" cy="80" r="28" fill="#faf6f0" fill-opacity="0.07"/>
+  <circle cx="80" cy="80" r="16" fill="#faf6f0" fill-opacity="0.07"/>
+  <circle cx="1120" cy="80" r="28" fill="#faf6f0" fill-opacity="0.07"/>
+  <circle cx="1120" cy="80" r="16" fill="#faf6f0" fill-opacity="0.07"/>
+  <circle cx="80" cy="550" r="28" fill="#faf6f0" fill-opacity="0.07"/>
+  <circle cx="80" cy="550" r="16" fill="#faf6f0" fill-opacity="0.07"/>
+  <circle cx="1120" cy="550" r="28" fill="#faf6f0" fill-opacity="0.07"/>
+  <circle cx="1120" cy="550" r="16" fill="#faf6f0" fill-opacity="0.07"/>
+
+  <!-- Eyebrow label -->
+  <text x="600" y="195" font-family="Georgia,serif" font-size="22" fill="#faf6f0" fill-opacity="0.6" text-anchor="middle" letter-spacing="6">FLORES ARTIFICIAIS ARTESANAIS</text>
+
+  <!-- Main title -->
+  <text x="600" y="300" font-family="Georgia,serif" font-size="88" fill="#faf6f0" text-anchor="middle" font-weight="bold" font-style="italic">Nette Artes Florais</text>
+
+  <!-- Divider line -->
+  <line x1="370" y1="336" x2="830" y2="336" stroke="#faf6f0" stroke-opacity="0.35" stroke-width="1"/>
+
+  <!-- Tagline -->
+  <text x="600" y="400" font-family="Georgia,serif" font-size="34" fill="#faf6f0" fill-opacity="0.88" text-anchor="middle">Beleza que não murcha. Nunca.</text>
+
+  <!-- Sub info -->
+  <text x="600" y="475" font-family="Arial,sans-serif" font-size="24" fill="#faf6f0" fill-opacity="0.6" text-anchor="middle">Embu das Artes, SP · Entregamos para todo o Brasil</text>
+
+  <!-- URL -->
+  <text x="600" y="548" font-family="Arial,sans-serif" font-size="20" fill="#faf6f0" fill-opacity="0.4" text-anchor="middle">nette-artes-florais.netlify.app</text>
+</svg>
