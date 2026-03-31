@@ -1,0 +1,14 @@
+# Old uncompressed category folders (originals)
+/casamento
+/empresas e negocios
+/pequenos artesanatos
+/presentes
+/residencia
+
+# Dev/temp files
+*.ps1
+*.log
+compress_err.txt
+compress_log.txt
+.git
+.gitignore

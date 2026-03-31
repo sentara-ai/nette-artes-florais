@@ -8,7 +8,6 @@
 
   /* ---------- constants ---------- */
   var WA = '5511993238938'
-  var STORAGE_KEY = 'nette_favorites'
   var SCROLL_THRESHOLD = 60
 
   /* ---------- helpers ---------- */
@@ -81,6 +80,63 @@
   }
 
   /* =================================================================
+     NAV DROPDOWN — click to open, close on outside click or Escape
+     ================================================================= */
+  function initDropdowns() {
+    /* --- Desktop dropdown --- */
+    var navDropdown = qs('.nav-dropdown')
+    var navToggle = qs('.nav-dropdown-toggle')
+
+    if (navToggle && navDropdown) {
+      on(navToggle, 'click', function (e) {
+        e.stopPropagation()
+        var isOpen = hasClass(navDropdown, 'open')
+        toggleClass(navDropdown, 'open', !isOpen)
+        navToggle.setAttribute('aria-expanded', !isOpen ? 'true' : 'false')
+      })
+
+      on(document, 'click', function (e) {
+        if (!navDropdown.contains(e.target)) {
+          removeClass(navDropdown, 'open')
+          navToggle.setAttribute('aria-expanded', 'false')
+        }
+      })
+
+      on(document, 'keydown', function (e) {
+        if (e.key === 'Escape' && hasClass(navDropdown, 'open')) {
+          removeClass(navDropdown, 'open')
+          navToggle.setAttribute('aria-expanded', 'false')
+          navToggle.focus()
+        }
+      })
+    }
+
+    /* --- Mobile dropdown (accordion) --- */
+    var mobileDropdown = qs('.mobile-dropdown')
+    var mobileToggle = qs('.mobile-dropdown-toggle')
+
+    if (mobileToggle && mobileDropdown) {
+      on(mobileToggle, 'click', function () {
+        toggleClass(mobileDropdown, 'open')
+      })
+    }
+
+    /* Mark "Produtos" toggle as active if on a category page */
+    var path = window.location.pathname
+    var filename = path.split('/').pop() || 'index.html'
+    var categoryPages = ['casamento.html', 'empresas.html', 'artesanatos.html', 'presentes.html', 'residencia.html']
+    if (categoryPages.indexOf(filename) >= 0) {
+      if (navToggle) addClass(navToggle, 'active')
+
+      /* Also mark the specific link inside dropdown */
+      qsa('.nav-dropdown-menu a, .mobile-dropdown-menu a').forEach(function (a) {
+        var linkFile = a.getAttribute('href').split('/').pop().split('#')[0]
+        if (linkFile === filename) addClass(a, 'active')
+      })
+    }
+  }
+
+  /* =================================================================
      LAZY LOADING — IntersectionObserver
      ================================================================= */
   function initLazyLoad() {
@@ -135,42 +191,6 @@
   }
 
   /* =================================================================
-     FAVORITES — localStorage
-     ================================================================= */
-  function getFavorites() {
-    try { return JSON.parse(localStorage.getItem(STORAGE_KEY)) || [] }
-    catch (e) { return [] }
-  }
-
-  function saveFavorites(favs) {
-    try { localStorage.setItem(STORAGE_KEY, JSON.stringify(favs)) } catch (e) {}
-  }
-
-  function toggleFavorite(imageId) {
-    var favs = getFavorites()
-    var idx = favs.indexOf(imageId)
-    if (idx >= 0) {
-      favs.splice(idx, 1)
-      showToast('Removido dos favoritos')
-    } else {
-      favs.push(imageId)
-      showToast('Adicionado aos favoritos ♥')
-    }
-    saveFavorites(favs)
-    updateAllHearts()
-    return favs.includes(imageId)
-  }
-
-  function updateAllHearts() {
-    var favs = getFavorites()
-    qsa('[data-fav-id]').forEach(function (btn) {
-      var id = btn.getAttribute('data-fav-id')
-      toggleClass(btn, 'favorited', favs.includes(id))
-      btn.setAttribute('aria-label', favs.includes(id) ? 'Remover dos favoritos' : 'Adicionar aos favoritos')
-    })
-  }
-
-  /* =================================================================
      LIGHTBOX — matches .lightbox CSS classes
      ================================================================= */
   var lightboxData = []
@@ -187,7 +207,6 @@
     var closeBtn = qs('.lightbox-close', lb)
     var prevBtn = qs('.lightbox-prev', lb)
     var nextBtn = qs('.lightbox-next', lb)
-    var favBtn = qs('.lightbox-btn-fav', lb)
     var shareBtn = qs('.lightbox-btn-share', lb)
     var waBtn = qs('.lightbox-btn-whatsapp', lb)
 
@@ -232,11 +251,6 @@
       preload.src = data.src
 
       if (counter) counter.textContent = (lightboxIndex + 1) + ' / ' + lightboxData.length
-
-      if (favBtn) {
-        favBtn.setAttribute('data-fav-id', data.id)
-        toggleClass(favBtn, 'favorited', getFavorites().includes(data.id))
-      }
 
       if (prevBtn) prevBtn.style.display = lightboxIndex === 0 ? 'none' : ''
       if (nextBtn) nextBtn.style.display = lightboxIndex === lightboxData.length - 1 ? 'none' : ''
@@ -294,11 +308,6 @@
       }
     }, { passive: true })
 
-    on(favBtn, 'click', function () {
-      var id = this.getAttribute('data-fav-id')
-      if (id) toggleFavorite(id)
-    })
-
     on(shareBtn, 'click', function () {
       shareItem(lightboxData[lightboxIndex])
     })
@@ -347,18 +356,10 @@
   }
 
   /* =================================================================
-     GALLERY ICON BUTTONS (fav + share on hover overlay)
+     GALLERY ICON BUTTONS (share on hover overlay)
      ================================================================= */
   function initGalleryButtons() {
     on(document, 'click', function (e) {
-      var favBtn = e.target.closest('.btn-icon[data-fav-id]')
-      if (favBtn) {
-        e.stopPropagation()
-        e.preventDefault()
-        toggleFavorite(favBtn.getAttribute('data-fav-id'))
-        return
-      }
-
       var shareBtn = e.target.closest('.btn-icon.share-btn')
       if (shareBtn) {
         e.stopPropagation()
@@ -366,7 +367,6 @@
         shareItem({ alt: 'Arranjo floral' })
       }
     })
-    updateAllHearts()
   }
 
   /* =================================================================
@@ -497,6 +497,42 @@
   }
 
   /* =================================================================
+     GALLERY PAGINATION — show PAGE_SIZE items, load more on click
+     ================================================================= */
+  function initPagination() {
+    var grid = qs('.gallery-grid')
+    var btn = qs('.load-more-btn')
+    if (!grid || !btn) return
+
+    var PAGE_SIZE = 12
+    var items = qsa('.gallery-item', grid)
+    var shown = PAGE_SIZE
+
+    function update() {
+      items.forEach(function (item, i) {
+        if (i < shown) {
+          item.style.display = ''
+        } else {
+          item.style.display = 'none'
+        }
+      })
+      if (shown >= items.length) {
+        btn.style.display = 'none'
+      } else {
+        btn.style.display = ''
+        btn.textContent = 'Ver mais (' + Math.min(PAGE_SIZE, items.length - shown) + ' de ' + (items.length - shown) + ' restantes)'
+      }
+    }
+
+    on(btn, 'click', function () {
+      shown = Math.min(shown + PAGE_SIZE, items.length)
+      update()
+    })
+
+    update()
+  }
+
+  /* =================================================================
      PRINT
      ================================================================= */
   function initPrint() {
@@ -543,6 +579,7 @@
      ================================================================= */
   function init() {
     initNav()
+    initDropdowns()
     initLazyLoad()
     initScrollReveal()
     initLightbox()
@@ -553,6 +590,7 @@
     initParallax()
     initCounters()
     initImageErrors()
+    initPagination()
     initPrint()
     initPrefetch()
     initFocusVisible()

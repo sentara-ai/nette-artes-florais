@@ -10,3 +10,6 @@
 compress_err.txt
 compress_log.txt
 *.log
+
+# Local Netlify folder
+.netlify

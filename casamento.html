@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +14,9 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="img/cards/casamento.jpg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,17 +25,24 @@
   <nav class="nav transparent" role="navigation" aria-label="Navegação principal">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="Nette Artes Florais — Início">
-        <img src="logo-transparent.png" alt="Nette Artes Florais" width="44" height="44">
-        <span>Nette</span>
+        <span>Nette Artes Florais</span>
       </a>
 
       <div class="nav-links">
         <a href="index.html">Início</a>
-        <a href="casamento.html">Casamento</a>
-        <a href="empresas.html">Empresas</a>
-        <a href="artesanatos.html">Artesanatos</a>
-        <a href="presentes.html">Presentes</a>
-        <a href="residencia.html">Residência</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Produtos
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="casamento.html">Casamento</a>
+            <a href="empresas.html">Empresas</a>
+            <a href="artesanatos.html">Artesanatos</a>
+            <a href="presentes.html">Presentes</a>
+            <a href="residencia.html">Residência</a>
+          </div>
+        </div>
         <a href="index.html#servicos">Serviços</a>
         <a href="index.html#contato">Contato</a>
       </div>
@@ -47,18 +57,26 @@
   <div class="mobile-overlay"></div>
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
     <a href="index.html">Início</a>
-    <a href="casamento.html">Casamento</a>
-    <a href="empresas.html">Empresas</a>
-    <a href="artesanatos.html">Artesanatos</a>
-    <a href="presentes.html">Presentes</a>
-    <a href="residencia.html">Residência</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-toggle">
+        Produtos
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-dropdown-menu">
+        <a href="casamento.html">Casamento</a>
+        <a href="empresas.html">Empresas</a>
+        <a href="artesanatos.html">Artesanatos</a>
+        <a href="presentes.html">Presentes</a>
+        <a href="residencia.html">Residência</a>
+      </div>
+    </div>
     <a href="index.html#servicos">Serviços</a>
     <a href="index.html#contato">Contato</a>
   </div>
 
   <!-- ========== CATEGORY HERO ========== -->
   <section class="category-hero">
-    <img src="img/cards/casamento.jpg" alt="Casamento" class="category-hero-bg">
+    <img src="img/casamento/09.webp" alt="Casamento" class="category-hero-bg" style="object-position: center 20%;">
     <div class="category-hero-overlay"></div>
     <div class="category-hero-content container">
       <div class="breadcrumb">
@@ -70,7 +88,18 @@
       <p class="section-subtitle">Arranjos florais artesanais que tornam seu dia ainda mais especial</p>
       <div class="image-count">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        11 peças nesta coleção
+        25 peças nesta coleção
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COLLECTION INTRO ========== -->
+  <section class="collection-intro">
+    <div class="container">
+      <div class="collection-intro-inner reveal">
+        <h2>Arranjos Florais para o Dia Mais Especial da Sua Vida</h2>
+        <p>Buquês de noiva, arranjos de mesa e arcos florais feitos à mão com muito amor, lindos para sempre como a memória do seu grande dia.</p>
+        <span class="personalization-highlight">Personalização completa ao gosto do cliente</span>
       </div>
     </div>
   </section>
@@ -79,16 +108,15 @@
   <section class="gallery-section">
     <div class="container">
       <div class="gallery-toolbar">
-        <span class="result-count">11 arranjos encontrados</span>
+        <span class="result-count">25 arranjos encontrados</span>
       </div>
       <div class="gallery-grid reveal-stagger reveal">
 
         <div class="gallery-item" data-image-id="casamento-01">
           <span class="badge-new">Novo</span>
-          <img data-src="img/casamento/01.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/01.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-01" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
@@ -96,10 +124,9 @@
 
         <div class="gallery-item" data-image-id="casamento-02">
           <span class="badge-new">Novo</span>
-          <img data-src="img/casamento/02.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/02.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-02" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
@@ -107,109 +134,227 @@
 
         <div class="gallery-item" data-image-id="casamento-03">
           <span class="badge-new">Novo</span>
-          <img data-src="img/casamento/03.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/03.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-03" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-04">
-          <img data-src="img/casamento/04.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/04.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-04" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-05">
-          <img data-src="img/casamento/05.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/05.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-05" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-06">
-          <img data-src="img/casamento/06.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/06.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-06" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-07">
-          <img data-src="img/casamento/07.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/07.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-07" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-08">
-          <img data-src="img/casamento/08.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/08.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-08" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-09">
-          <img data-src="img/casamento/09.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/09.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-09" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-10">
-          <img data-src="img/casamento/10.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/10.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-10" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="casamento-11">
-          <img data-src="img/casamento/11.jpg" alt="Arranjo floral para casamento" width="400" height="533">
+          <img data-src="img/casamento/11.webp" alt="Arranjo floral para casamento" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="casamento-11" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <div class="gallery-item" data-image-id="casamento-12">
+          <img data-src="img/casamento/12.webp" alt="Arranjo floral para casamento" width="400" height="533">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-actions">
+              <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+            </div>
+          </div>
+        </div>
 
-  <!-- ========== PROMO BANNER ========== -->
-  <section class="section" style="padding: 3rem 0 5rem;">
-    <div class="container">
-      <div class="promo-banner reveal">
-        <h3>Gostou de Algum Arranjo?</h3>
-        <p>Entre em contato pelo WhatsApp para saber mais sobre disponibilidade, personalização e valores. Orçamento sem compromisso!</p>
-        <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Vi%20a%20cole%C3%A7%C3%A3o%20de%20Casamento%20e%20gostaria%20de%20um%20or%C3%A7amento.%20%F0%9F%8C%B8" class="hero-cta" target="_blank" rel="noopener">
-          Falar com a Nette
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+        <div class="gallery-item" data-image-id="casamento-13">
+          <img data-src="img/casamento/13.webp" alt="Arranjo floral para casamento" width="400" height="533">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-actions">
+              <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-image-id="casamento-14">
+          <span class="badge-new">Novo</span>
+          <img data-src="img/casamento/14.webp" alt="Buque elegante com rosas e eucalipto para casamento" width="400" height="533">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-actions">
+              <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-image-id="casamento-15">
+          <span class="badge-new">Novo</span>
+          <img data-src="img/casamento/15.webp" alt="Buque misto com fita rosa para noiva" width="400" height="533">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-actions">
+              <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+        <div class="gallery-item" data-image-id="casamento-16">
+          <span class="badge-new">Novo</span>
+          <img data-src="img/casamento/16.webp" alt="Arranjo floral para casamento na janela ensolarada" width="400" height="533">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-actions">
+              <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+            </div>
+          </div>
+        </div>
+
+
+            <div class="gallery-item" data-image-id="casamento-17">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/17.webp" alt="Vaso com buque floral" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-18">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/18.webp" alt="Rosas em vaso" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-19">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/19.webp" alt="Buque elegante com rosas e eucalipto" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-20">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/20.webp" alt="Buque de flores em vaso" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-21">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/21.webp" alt="Arranjo floral na janela ensolarada" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-22">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/22.webp" alt="Buque redondo de rosas vermelhas e rosas claras" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-23">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/23.webp" alt="Buque de noiva com rosas rosadas e fita" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-24">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/24.webp" alt="Buque de noiva com rosas vermelhas e fita rosa" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="casamento-25">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/casamento/25.webp" alt="Buque redondo de rosas borgonha" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+            </div>
+      <div class="load-more-wrap">
+        <button class="load-more-btn">Ver mais</button>
       </div>
     </div>
   </section>
@@ -231,9 +376,6 @@
         <button class="lightbox-btn lightbox-btn-share">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Compartilhar
         </button>
-        <button class="lightbox-btn lightbox-btn-fav" data-fav-id="">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Favoritar
-        </button>
       </div>
       <div class="lightbox-counter"></div>
     </div>
@@ -244,7 +386,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo-transparent.png" alt="Nette Artes Florais" width="60" height="60">
+          <img src="logo-transparent.webp" alt="Nette Artes Florais" width="60" height="60">
           <p>Arranjos de flores artificiais artesanais feitos com arte e carinho. Transformando ambientes desde São Paulo para todo o Brasil.</p>
         </div>
 
@@ -275,7 +417,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2024 Nette Artes Florais. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Nette Artes Florais. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
@@ -290,6 +432,6 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

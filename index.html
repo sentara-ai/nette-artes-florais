@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +14,9 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="og.svg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,17 +25,24 @@
   <nav class="nav transparent" role="navigation" aria-label="Navegação principal">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="Nette Artes Florais — Início">
-        <img src="logo-transparent.png" alt="Nette Artes Florais" width="44" height="44">
-        <span>Nette</span>
+        <span>Nette Artes Florais</span>
       </a>
 
       <div class="nav-links">
         <a href="index.html">Início</a>
-        <a href="casamento.html">Casamento</a>
-        <a href="empresas.html">Empresas</a>
-        <a href="artesanatos.html">Artesanatos</a>
-        <a href="presentes.html">Presentes</a>
-        <a href="residencia.html">Residência</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Produtos
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="casamento.html">Casamento</a>
+            <a href="empresas.html">Empresas</a>
+            <a href="artesanatos.html">Artesanatos</a>
+            <a href="presentes.html">Presentes</a>
+            <a href="residencia.html">Residência</a>
+          </div>
+        </div>
         <a href="#servicos">Serviços</a>
         <a href="#contato">Contato</a>
       </div>
@@ -47,24 +57,60 @@
   <div class="mobile-overlay"></div>
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
     <a href="index.html">Início</a>
-    <a href="casamento.html">Casamento</a>
-    <a href="empresas.html">Empresas</a>
-    <a href="artesanatos.html">Artesanatos</a>
-    <a href="presentes.html">Presentes</a>
-    <a href="residencia.html">Residência</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-toggle">
+        Produtos
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-dropdown-menu">
+        <a href="casamento.html">Casamento</a>
+        <a href="empresas.html">Empresas</a>
+        <a href="artesanatos.html">Artesanatos</a>
+        <a href="presentes.html">Presentes</a>
+        <a href="residencia.html">Residência</a>
+      </div>
+    </div>
     <a href="#servicos">Serviços</a>
     <a href="#contato">Contato</a>
   </div>
 
   <!-- ========== HERO ========== -->
   <section class="hero">
+    <img src="img/cards/casamento.webp" alt="" class="hero-bg" width="1200" height="800">
     <div class="hero-content">
-      <img src="logo-transparent.png" alt="Nette Artes Florais" class="hero-logo-img" width="450" height="320">
+      <img src="new-logo-nobg.webp" alt="Nette Artes Florais" class="hero-logo-img" width="1200" height="1024">
       <p class="hero-tagline">Arranjos de flores artificiais feitos com arte e carinho</p>
+      <p class="hero-tagline" style="opacity:0.9;margin-top:-0.25rem;">Os arranjos no site são apenas uma amostra do nosso trabalho. Se você já tem uma ideia ou referência em mente, nós criamos sob medida para você!</p>
       <a href="#categorias" class="hero-cta">
         Explorar Coleções
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
       </a>
+    </div>
+    <div class="hero-features">
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 11V6a2 2 0 00-2-2 2 2 0 00-2 2"/><path d="M14 10V4a2 2 0 00-2-2 2 2 0 00-2 2v2"/><path d="M10 10.5V6a2 2 0 00-2-2 2 2 0 00-2 2v8"/><path d="M18 8a2 2 0 012 2v7.4a4.6 4.6 0 01-4.6 4.6H13a8 8 0 01-5.27-1.99L6 18.4"/></svg>
+        </div>
+        <span>Feito à Mão</span>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <span>Personalizado</span>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <span>Eterna Durabilidade</span>
+      </div>
+      <div class="hero-feature">
+        <div class="hero-feature-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 1116 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <span>Entrega em SP</span>
+      </div>
     </div>
     <div class="hero-scroll-hint">
       <span>Descubra</span>
@@ -82,11 +128,11 @@
       <div class="categories-grid reveal-stagger reveal" style="margin-top: 2.5rem;">
 
         <a href="casamento.html" class="category-card" data-count="11">
-          <img src="img/cards/casamento.jpg" alt="Arranjos para Casamento" width="400" height="500" loading="lazy">
+          <img src="img/cards/casamento.webp" alt="Arranjos para Casamento" width="400" height="500" loading="lazy">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Casamento</h3>
-            <span class="card-count">11 peças</span>
+            <span class="card-count">23 peças</span>
             <span class="card-btn">
               Ver Coleção
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -95,11 +141,11 @@
         </a>
 
         <a href="empresas.html" class="category-card" data-count="24">
-          <img src="img/cards/empresas.jpg" alt="Arranjos para Empresas" width="400" height="500" loading="lazy">
+          <img src="img/cards/empresas.webp" alt="Arranjos para Empresas" width="400" height="500" loading="lazy">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Empresas</h3>
-            <span class="card-count">24 peças</span>
+            <span class="card-count">27 peças</span>
             <span class="card-btn">
               Ver Coleção
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -108,11 +154,11 @@
         </a>
 
         <a href="artesanatos.html" class="category-card" data-count="29">
-          <img src="img/cards/artesanatos.jpg" alt="Pequenos Artesanatos" width="400" height="500" loading="lazy">
+          <img src="img/cards/artesanatos.webp" alt="Pequenos Artesanatos" width="400" height="500" loading="lazy">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Artesanatos</h3>
-            <span class="card-count">29 peças</span>
+            <span class="card-count">21 peças</span>
             <span class="card-btn">
               Ver Coleção
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -121,11 +167,11 @@
         </a>
 
         <a href="presentes.html" class="category-card" data-count="10">
-          <img src="img/cards/presentes.jpg" alt="Presentes Florais" width="400" height="500" loading="lazy">
+          <img src="img/cards/presentes.webp" alt="Presentes Florais" width="400" height="500" loading="lazy">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Presentes</h3>
-            <span class="card-count">10 peças</span>
+            <span class="card-count">13 peças</span>
             <span class="card-btn">
               Ver Coleção
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -133,12 +179,12 @@
           </div>
         </a>
 
-        <a href="residencia.html" class="category-card" data-count="60">
-          <img src="img/cards/residencia.jpg" alt="Arranjos para Residência" width="400" height="500" loading="lazy">
+        <a href="residencia.html" class="category-card" data-count="59">
+          <img src="img/cards/residencia.webp" alt="Arranjos para Residência" width="400" height="500" loading="lazy">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Residência</h3>
-            <span class="card-count">60 peças</span>
+            <span class="card-count">53 peças</span>
             <span class="card-btn">
               Ver Coleção
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -181,6 +227,54 @@
           <h4>Consultoria de Ambientes</h4>
           <p>Orientação personalizada para escolher os arranjos ideais para cada cômodo ou espaço comercial.</p>
         </div>
+
+        <div class="service-card">
+          <div class="service-icon">🖼️</div>
+          <h4>Decoração de Parede</h4>
+          <p>Painéis e composições florais de grande porte para transformar paredes inteiras em verdadeiras obras de arte.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎂</div>
+          <h4>Aniversários</h4>
+          <p>Mesas, topos de bolo, balcões e arcos decorativos florais para tornar sua festa ainda mais especial.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🍽️</div>
+          <h4>Centro de Mesa</h4>
+          <p>Peças elegantes para eventos, jantares e decoração permanente, do mais delicado ao mais grandioso.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🍼</div>
+          <h4>Chá de Bebê &amp; Maternidade</h4>
+          <p>Decoração delicada e personalizada para festas de maternidade, chá revelação e chá de fraldas.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎓</div>
+          <h4>Formaturas</h4>
+          <p>Arranjos e cenários florais para festas e cerimônias de formatura, do salão até o palco de colação.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🎄</div>
+          <h4>Datas Comemorativas</h4>
+          <p>Decoração sazonal para Natal, Páscoa, Dia das Mães e outras datas especiais ao longo do ano.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🙏</div>
+          <h4>Batizado &amp; Primeira Comunhão</h4>
+          <p>Arranjos delicados e simbólicos para celebrar cerimônias religiosas com elegância e significado.</p>
+        </div>
+
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h4>Feiras &amp; Stands</h4>
+          <p>Composições florais de impacto para estandes corporativos, feiras e eventos de negócios.</p>
+        </div>
       </div>
     </div>
   </section>
@@ -194,13 +288,14 @@
           <h2>Arte em Cada Detalhe</h2>
           <p>Com anos de experiência na criação de arranjos florais artificiais, a Nette transforma ambientes com peças que unem beleza e durabilidade. Cada arranjo é cuidadosamente montado à mão, com materiais de alta qualidade que garantem um visual realista e elegante.</p>
           <p>Seja para decorar sua casa, presentear alguém especial ou criar a ambientação perfeita para seu evento, a Nette está pronta para dar vida à sua visão com carinho e criatividade.</p>
+
           <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20%F0%9F%8C%B8" class="hero-cta" style="margin-top: 1.5rem; animation: none;" target="_blank" rel="noopener">
             Fale com a Nette
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
         <div class="about-image">
-          <img src="img/cards/residencia.jpg" alt="Arranjo floral da Nette Artes Florais" width="600" height="400" loading="lazy">
+          <img src="img/residencia/about-roses.webp" alt="Rosas vermelhas em arranjo floral da Nette Artes Florais" loading="lazy">
         </div>
       </div>
     </div>
@@ -211,7 +306,7 @@
     <div class="container">
       <div class="promo-banner reveal">
         <h3>Tem uma Ideia em Mente?</h3>
-        <p>Envie uma foto de inspiração e a Nette cria um arranjo exclusivo para você. Orçamento sem compromisso!</p>
+        <p>Nosso portfólio não é limite! Se você já sabe o que quer, envie uma foto de inspiração e a Nette cria um arranjo exclusivo e sob medida para você. Orçamento sem compromisso!</p>
         <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Tenho%20uma%20inspira%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento%20personalizado.%20%F0%9F%8C%B8" class="hero-cta" target="_blank" rel="noopener">
           Enviar Inspiração pelo WhatsApp
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -225,8 +320,8 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo-transparent.png" alt="Nette Artes Florais" width="60" height="60">
-          <p>Arranjos de flores artificiais artesanais feitos com arte e carinho. Transformando ambientes desde São Paulo para todo o Brasil.</p>
+          <img src="logo-transparent.webp" alt="Nette Artes Florais" width="60" height="60">
+          <p>Arranjos de flores artificiais artesanais feitos com arte e carinho. Transformando ambientes desde 2023.</p>
         </div>
 
         <div>
@@ -256,7 +351,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2024 Nette Artes Florais. Todos os direitos reservados.</p>
+        <p>&copy; 2023 Nette Artes Florais. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
@@ -271,6 +366,6 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>

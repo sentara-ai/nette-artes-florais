@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
@@ -14,6 +14,9 @@
   <meta property="og:type" content="website">
   <meta property="og:image" content="img/cards/presentes.jpg">
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -22,17 +25,24 @@
   <nav class="nav transparent" role="navigation" aria-label="Navegação principal">
     <div class="nav-inner">
       <a href="index.html" class="nav-logo" aria-label="Nette Artes Florais — Início">
-        <img src="logo-transparent.png" alt="Nette Artes Florais" width="44" height="44">
-        <span>Nette</span>
+        <span>Nette Artes Florais</span>
       </a>
 
       <div class="nav-links">
         <a href="index.html">Início</a>
-        <a href="casamento.html">Casamento</a>
-        <a href="empresas.html">Empresas</a>
-        <a href="artesanatos.html">Artesanatos</a>
-        <a href="presentes.html">Presentes</a>
-        <a href="residencia.html">Residência</a>
+        <div class="nav-dropdown">
+          <button class="nav-dropdown-toggle" aria-expanded="false" aria-haspopup="true">
+            Produtos
+            <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+          </button>
+          <div class="nav-dropdown-menu">
+            <a href="casamento.html">Casamento</a>
+            <a href="empresas.html">Empresas</a>
+            <a href="artesanatos.html">Artesanatos</a>
+            <a href="presentes.html">Presentes</a>
+            <a href="residencia.html">Residência</a>
+          </div>
+        </div>
         <a href="index.html#servicos">Serviços</a>
         <a href="index.html#contato">Contato</a>
       </div>
@@ -47,18 +57,26 @@
   <div class="mobile-overlay"></div>
   <div class="mobile-menu" id="mobile-menu" role="navigation" aria-label="Menu mobile">
     <a href="index.html">Início</a>
-    <a href="casamento.html">Casamento</a>
-    <a href="empresas.html">Empresas</a>
-    <a href="artesanatos.html">Artesanatos</a>
-    <a href="presentes.html">Presentes</a>
-    <a href="residencia.html">Residência</a>
+    <div class="mobile-dropdown">
+      <button class="mobile-dropdown-toggle">
+        Produtos
+        <svg class="chevron-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="mobile-dropdown-menu">
+        <a href="casamento.html">Casamento</a>
+        <a href="empresas.html">Empresas</a>
+        <a href="artesanatos.html">Artesanatos</a>
+        <a href="presentes.html">Presentes</a>
+        <a href="residencia.html">Residência</a>
+      </div>
+    </div>
     <a href="index.html#servicos">Serviços</a>
     <a href="index.html#contato">Contato</a>
   </div>
 
   <!-- ========== CATEGORY HERO ========== -->
   <section class="category-hero">
-    <img src="img/cards/presentes.jpg" alt="Presentes" class="category-hero-bg">
+    <img src="img/banners/presentes.webp" alt="Presentes" class="category-hero-bg" style="object-position: center center;">
     <div class="category-hero-overlay"></div>
     <div class="category-hero-content container">
       <div class="breadcrumb">
@@ -70,7 +88,18 @@
       <p class="section-subtitle">Presenteie com beleza e carinho que dura para sempre</p>
       <div class="image-count">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"/><circle cx="12" cy="13" r="4"/></svg>
-        10 peças nesta coleção
+        17 peças nesta coleção
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== COLLECTION INTRO ========== -->
+  <section class="collection-intro">
+    <div class="container">
+      <div class="collection-intro-inner reveal">
+        <h2>Presentes que Encantam e Duram para Sempre</h2>
+        <p>Flores artificiais de alta qualidade, feitas à mão e lindas por muitos anos. Perfeitas para aniversários, Dia das Mães e qualquer ocasião especial.</p>
+        <span class="personalization-highlight">Presente personalizado com o carinho que você escolhe</span>
       </div>
     </div>
   </section>
@@ -79,16 +108,15 @@
   <section class="gallery-section">
     <div class="container">
       <div class="gallery-toolbar">
-        <span class="result-count">10 arranjos encontrados</span>
+        <span class="result-count">17 arranjos encontrados</span>
       </div>
       <div class="gallery-grid reveal-stagger reveal">
 
         <div class="gallery-item" data-image-id="presentes-01">
           <span class="badge-new">Novo</span>
-          <img data-src="img/presentes/01.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/01.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-01" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
@@ -96,10 +124,9 @@
 
         <div class="gallery-item" data-image-id="presentes-02">
           <span class="badge-new">Novo</span>
-          <img data-src="img/presentes/02.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/02.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-02" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
@@ -107,99 +134,152 @@
 
         <div class="gallery-item" data-image-id="presentes-03">
           <span class="badge-new">Novo</span>
-          <img data-src="img/presentes/03.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/03.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-03" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="presentes-04">
-          <img data-src="img/presentes/04.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/04.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-04" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="presentes-05">
-          <img data-src="img/presentes/05.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/05.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-05" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="presentes-06">
-          <img data-src="img/presentes/06.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/06.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-06" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="presentes-07">
-          <img data-src="img/presentes/07.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/07.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-07" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="presentes-08">
-          <img data-src="img/presentes/08.jpg" alt="Presente floral" width="400" height="533">
+          <img data-src="img/presentes/08.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-08" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
+
         <div class="gallery-item" data-image-id="presentes-09">
-          <img data-src="img/presentes/09.jpg" alt="Presente floral" width="400" height="533">
+          <span class="badge-new">Novo</span>
+          <img data-src="img/presentes/09.webp" alt="Vaso com buque de flores para presente" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-09" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
         <div class="gallery-item" data-image-id="presentes-10">
-          <img data-src="img/presentes/10.jpg" alt="Presente floral" width="400" height="533">
+          <span class="badge-new">Novo</span>
+          <img data-src="img/presentes/10.webp" alt="Rosas em vaso como presente especial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
-              <button class="btn-icon" data-fav-id="presentes-10" aria-label="Favoritar"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></button>
               <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
             </div>
           </div>
         </div>
 
-      </div>
-    </div>
-  </section>
+        <div class="gallery-item" data-image-id="presentes-11">
+          <span class="badge-new">Novo</span>
+          <img data-src="img/presentes/11.webp" alt="Buque de flores em vaso elegante" width="400" height="533">
+          <div class="gallery-item-overlay">
+            <div class="gallery-item-actions">
+              <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+            </div>
+          </div>
+        </div>
 
-  <!-- ========== PROMO BANNER ========== -->
-  <section class="section" style="padding: 3rem 0 5rem;">
-    <div class="container">
-      <div class="promo-banner reveal">
-        <h3>Gostou de Algum Arranjo?</h3>
-        <p>Entre em contato pelo WhatsApp para saber mais sobre disponibilidade, personalização e valores. Orçamento sem compromisso!</p>
-        <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Vi%20a%20cole%C3%A7%C3%A3o%20de%20Presentes%20e%20gostaria%20de%20um%20or%C3%A7amento.%20%F0%9F%8C%B8" class="hero-cta" target="_blank" rel="noopener">
-          Falar com a Nette
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-        </a>
+            <div class="gallery-item" data-image-id="presentes-12">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/presentes/12.webp" alt="Buque misto com fita rosa" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="presentes-13">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/presentes/13.webp" alt="Buque de tulipas em vaso branco sobre mesa" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="presentes-14">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/presentes/14.webp" alt="Arranjo de dálias pêssego em vaso redondo rosa" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="presentes-15">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/presentes/15.webp" alt="Arranjo de rosas pink em vaso pedestal branco" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="presentes-16">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/presentes/16.webp" alt="Arranjo de rosas pink em travessa de vidro" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+
+            <div class="gallery-item" data-image-id="presentes-17">
+              <span class="badge-new">Novo</span>
+              <img data-src="img/presentes/17.webp" alt="Arranjo de hortênsias pêssego em vaso redondo de vidro" width="400" height="533">
+              <div class="gallery-item-overlay">
+                <div class="gallery-item-actions">
+                  <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
+                </div>
+              </div>
+            </div>
+            </div>
+      <div class="load-more-wrap">
+        <button class="load-more-btn">Ver mais</button>
       </div>
     </div>
   </section>
@@ -221,9 +301,6 @@
         <button class="lightbox-btn lightbox-btn-share">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg> Compartilhar
         </button>
-        <button class="lightbox-btn lightbox-btn-fav" data-fav-id="">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg> Favoritar
-        </button>
       </div>
       <div class="lightbox-counter"></div>
     </div>
@@ -234,7 +311,7 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <img src="logo-transparent.png" alt="Nette Artes Florais" width="60" height="60">
+          <img src="logo-transparent.webp" alt="Nette Artes Florais" width="60" height="60">
           <p>Arranjos de flores artificiais artesanais feitos com arte e carinho. Transformando ambientes desde São Paulo para todo o Brasil.</p>
         </div>
 
@@ -265,7 +342,7 @@
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2024 Nette Artes Florais. Todos os direitos reservados.</p>
+        <p>&copy; 2025 Nette Artes Florais. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
@@ -280,6 +357,6 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js"></script>
+  <script src="script.js?v=2"></script>
 </body>
 </html>
