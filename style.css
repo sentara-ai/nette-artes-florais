@@ -1701,7 +1701,11 @@ section {
     margin-top: 1.5rem;
   }
 
-  .reveal,
+  .reveal {
+    transform: translateY(12px);
+    transition: opacity 0.32s var(--ease-out), transform 0.32s var(--ease-out);
+  }
+
   .reveal-stagger > * {
     opacity: 1;
     transform: none;

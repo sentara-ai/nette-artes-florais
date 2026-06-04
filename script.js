@@ -176,6 +176,9 @@
     if (!els.length) return
 
     if ('IntersectionObserver' in window) {
+      var revealMargin = window.matchMedia && window.matchMedia('(max-width: 768px)').matches
+        ? '420px 0px'
+        : '220px 0px'
       var io = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
@@ -183,7 +186,7 @@
             io.unobserve(entry.target)
           }
         })
-      }, { rootMargin: '220px 0px', threshold: 0.01 })
+      }, { rootMargin: revealMargin, threshold: 0.01 })
       els.forEach(function (el) { io.observe(el) })
     } else {
       els.forEach(function (el) { addClass(el, 'visible') })
