@@ -1688,6 +1688,27 @@ section {
   transform: translateY(0);
 }
 
+@media (max-width: 768px) {
+  section {
+    padding: 3rem 0;
+  }
+
+  #servicos {
+    padding: 3rem 0 !important;
+  }
+
+  .services-grid {
+    margin-top: 1.5rem;
+  }
+
+  .reveal,
+  .reveal-stagger > * {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
+
 /* --- Utility --- */
 .sr-only {
   position: absolute;

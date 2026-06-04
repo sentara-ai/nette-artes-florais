@@ -183,7 +183,7 @@
             io.unobserve(entry.target)
           }
         })
-      }, { rootMargin: '-60px 0px', threshold: 0.1 })
+      }, { rootMargin: '220px 0px', threshold: 0.01 })
       els.forEach(function (el) { io.observe(el) })
     } else {
       els.forEach(function (el) { addClass(el, 'visible') })
