@@ -1,6 +1,6 @@
 /* ================================================================
-   Nette Artes Florais — Main Script
-   Pure vanilla JS · No dependencies · ES2020+
+   Nette Artes Florais - Main Script
+   Pure vanilla JS. No dependencies. ES2020+
    ================================================================ */
 
 ;(function () {
@@ -30,7 +30,7 @@
   }
 
   /* =================================================================
-     NAV — scroll state + hamburger menu
+     NAV - scroll state and hamburger menu
      ================================================================= */
   function initNav() {
     var nav = qs('.nav')
@@ -80,7 +80,7 @@
   }
 
   /* =================================================================
-     NAV DROPDOWN — click to open, close on outside click or Escape
+     NAV DROPDOWN - click to open, close on outside click or Escape
      ================================================================= */
   function initDropdowns() {
     /* --- Desktop dropdown --- */
@@ -137,7 +137,7 @@
   }
 
   /* =================================================================
-     LAZY LOADING — IntersectionObserver
+     LAZY LOADING - IntersectionObserver
      ================================================================= */
   function initLazyLoad() {
     var images = qsa('img[data-src]')
@@ -169,7 +169,7 @@
   }
 
   /* =================================================================
-     SCROLL REVEAL — CSS class: .reveal → .visible
+     SCROLL REVEAL - CSS class: .reveal to .visible
      ================================================================= */
   function initScrollReveal() {
     var els = qsa('.reveal')
@@ -191,7 +191,7 @@
   }
 
   /* =================================================================
-     LIGHTBOX — matches .lightbox CSS classes
+     LIGHTBOX - matches .lightbox CSS classes
      ================================================================= */
   var lightboxData = []
   var lightboxIndex = 0
@@ -318,26 +318,29 @@
         'Olá, Nette! Gostei deste arranjo e gostaria de saber mais: ' +
         window.location.href
       )
-      window.open('https://wa.me/' + WA + '?text=' + msg, '_blank')
+      var waWindow = window.open('https://wa.me/' + WA + '?text=' + msg, '_blank', 'noopener,noreferrer')
+      if (waWindow) waWindow.opener = null
     })
   }
 
   /* =================================================================
-     SHARE — Web Share API + clipboard fallback
+     SHARE - Web Share API and clipboard fallback
      ================================================================= */
   function shareItem(data) {
     var url = window.location.href.split('#')[0]
     var shareData = {
       title: 'Nette Artes Florais',
-      text: 'Veja este lindo arranjo floral da Nette! 🌸',
+      text: 'Veja este lindo arranjo floral da Nette!',
       url: url
     }
 
     if (navigator.share) {
-      navigator.share(shareData).catch(function () {})
+      navigator.share(shareData).catch(function (error) {
+        if (error && error.name !== 'AbortError') fallbackCopy(url)
+      })
     } else if (navigator.clipboard && navigator.clipboard.writeText) {
       navigator.clipboard.writeText(url).then(function () {
-        showToast('Link copiado! 📋')
+        showToast('Link copiado!')
       }).catch(function () { fallbackCopy(url) })
     } else {
       fallbackCopy(url)
@@ -350,7 +353,7 @@
     ta.style.cssText = 'position:fixed;opacity:0'
     document.body.appendChild(ta)
     ta.select()
-    try { document.execCommand('copy'); showToast('Link copiado! 📋') }
+    try { document.execCommand('copy'); showToast('Link copiado!') }
     catch (e) { showToast('Não foi possível copiar') }
     document.body.removeChild(ta)
   }
@@ -370,7 +373,7 @@
   }
 
   /* =================================================================
-     TOAST — CSS class: .toast → .visible
+     TOAST - CSS class: .toast to .visible
      ================================================================= */
   var toastTimeout
   function showToast(message) {
@@ -497,7 +500,7 @@
   }
 
   /* =================================================================
-     GALLERY PAGINATION — show PAGE_SIZE items, load more on click
+     GALLERY PAGINATION - show PAGE_SIZE items, load more on click
      ================================================================= */
   function initPagination() {
     var grid = qs('.gallery-grid')

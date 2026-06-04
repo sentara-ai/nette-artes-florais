@@ -3,28 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Nette Artes Florais — Arranjos de Flores Artificiais</title>
+  <title>Nette Artes Florais - Arranjos de Flores Artificiais</title>
   <meta name="description" content="Arranjos de flores artificiais artesanais para casamentos, empresas, residências e presentes. Peças exclusivas feitas com carinho pela Nette em São Paulo.">
   <meta name="theme-color" content="#8B6F47">
   <link rel="icon" href="og.svg" type="image/svg+xml">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Nette Artes Florais">
-  <meta property="og:description" content="Arranjos de flores artificiais artesanais — casamentos, empresas, residências e presentes.">
+  <meta property="og:description" content="Arranjos de flores artificiais artesanais - casamentos, empresas, residências e presentes.">
   <meta property="og:type" content="website">
   <meta property="og:image" content="og.svg">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Inter:wght@300;400;500;600&display=swap">
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css?v=3">
 </head>
 <body>
 
   <!-- ========== NAVIGATION ========== -->
   <nav class="nav transparent" role="navigation" aria-label="Navegação principal">
     <div class="nav-inner">
-      <a href="index.html" class="nav-logo" aria-label="Nette Artes Florais — Início">
+      <a href="index.html" class="nav-logo" aria-label="Nette Artes Florais - Início">
         <span>Nette Artes Florais</span>
       </a>
 
@@ -43,7 +40,7 @@
             <a href="residencia.html">Residência</a>
           </div>
         </div>
-        <a href="#servicos">Serviços</a>
+        <a href="index.html#servicos">Serviços</a>
         <a href="#contato">Contato</a>
       </div>
 
@@ -70,15 +67,18 @@
         <a href="residencia.html">Residência</a>
       </div>
     </div>
-    <a href="#servicos">Serviços</a>
+    <a href="index.html#servicos">Serviços</a>
     <a href="#contato">Contato</a>
   </div>
 
+  <main>
+
   <!-- ========== HERO ========== -->
   <section class="hero">
-    <img src="img/cards/casamento.webp" alt="" class="hero-bg" width="1200" height="800">
+    <img src="img/cards/casamento.webp" alt="" class="hero-bg" width="1200" height="800" fetchpriority="high" decoding="async">
     <div class="hero-content">
-      <img src="new-logo-nobg.webp" alt="Nette Artes Florais" class="hero-logo-img" width="1200" height="1024">
+      <h1 class="sr-only">Nette Artes Florais</h1>
+      <img src="new-logo-nobg.webp" alt="Nette Artes Florais" class="hero-logo-img" width="1200" height="1024" fetchpriority="high" decoding="async">
       <p class="hero-tagline">Arranjos de flores artificiais feitos com arte e carinho</p>
       <p class="hero-tagline" style="opacity:0.9;margin-top:-0.25rem;">Os arranjos no site são apenas uma amostra do nosso trabalho. Se você já tem uma ideia ou referência em mente, nós criamos sob medida para você!</p>
       <a href="#categorias" class="hero-cta">
@@ -128,7 +128,7 @@
       <div class="categories-grid reveal-stagger reveal" style="margin-top: 2.5rem;">
 
         <a href="casamento.html" class="category-card" data-count="11">
-          <img src="img/cards/casamento.webp" alt="Arranjos para Casamento" width="400" height="500" loading="lazy">
+          <img src="img/cards/casamento.webp" alt="Arranjos para Casamento" width="400" height="500" loading="lazy" decoding="async">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Casamento</h3>
@@ -141,7 +141,7 @@
         </a>
 
         <a href="empresas.html" class="category-card" data-count="24">
-          <img src="img/cards/empresas.webp" alt="Arranjos para Empresas" width="400" height="500" loading="lazy">
+          <img src="img/cards/empresas.webp" alt="Arranjos para Empresas" width="400" height="500" loading="lazy" decoding="async">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Empresas</h3>
@@ -154,7 +154,7 @@
         </a>
 
         <a href="artesanatos.html" class="category-card" data-count="29">
-          <img src="img/cards/artesanatos.webp" alt="Pequenos Artesanatos" width="400" height="500" loading="lazy">
+          <img src="img/cards/artesanatos.webp" alt="Pequenos Artesanatos" width="400" height="500" loading="lazy" decoding="async">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Artesanatos</h3>
@@ -167,7 +167,7 @@
         </a>
 
         <a href="presentes.html" class="category-card" data-count="10">
-          <img src="img/cards/presentes.webp" alt="Presentes Florais" width="400" height="500" loading="lazy">
+          <img src="img/cards/presentes.webp" alt="Presentes Florais" width="400" height="500" loading="lazy" decoding="async">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Presentes</h3>
@@ -180,7 +180,7 @@
         </a>
 
         <a href="residencia.html" class="category-card" data-count="59">
-          <img src="img/cards/residencia.webp" alt="Arranjos para Residência" width="400" height="500" loading="lazy">
+          <img src="img/cards/residencia.webp" alt="Arranjos para Residência" width="400" height="500" loading="lazy" decoding="async">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
             <h3>Residência</h3>
@@ -206,73 +206,73 @@
       <div class="services-grid reveal-stagger reveal">
         <div class="service-card">
           <div class="service-icon">🌿</div>
-          <h4>Renovação de Arranjos</h4>
+          <h3>Renovação de Arranjos</h3>
           <p>Renove seus arranjos antigos com flores novas e design atualizado. Dê vida nova às suas peças favoritas.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🎨</div>
-          <h4>Arranjos Personalizados</h4>
+          <h3>Arranjos Personalizados</h3>
           <p>Crie peças sob medida com as cores, tamanhos e estilos que combinam perfeitamente com seu espaço.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">📸</div>
-          <h4>Inspiração &amp; Recriação</h4>
+          <h3>Inspiração &amp; Recriação</h3>
           <p>Traga uma foto de um arranjo que você gostou e a Nette recria com seu toque artesanal exclusivo.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🏠</div>
-          <h4>Consultoria de Ambientes</h4>
+          <h3>Consultoria de Ambientes</h3>
           <p>Orientação personalizada para escolher os arranjos ideais para cada cômodo ou espaço comercial.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🖼️</div>
-          <h4>Decoração de Parede</h4>
+          <h3>Decoração de Parede</h3>
           <p>Painéis e composições florais de grande porte para transformar paredes inteiras em verdadeiras obras de arte.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🎂</div>
-          <h4>Aniversários</h4>
+          <h3>Aniversários</h3>
           <p>Mesas, topos de bolo, balcões e arcos decorativos florais para tornar sua festa ainda mais especial.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🍽️</div>
-          <h4>Centro de Mesa</h4>
+          <h3>Centro de Mesa</h3>
           <p>Peças elegantes para eventos, jantares e decoração permanente, do mais delicado ao mais grandioso.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🍼</div>
-          <h4>Chá de Bebê &amp; Maternidade</h4>
+          <h3>Chá de Bebê &amp; Maternidade</h3>
           <p>Decoração delicada e personalizada para festas de maternidade, chá revelação e chá de fraldas.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🎓</div>
-          <h4>Formaturas</h4>
+          <h3>Formaturas</h3>
           <p>Arranjos e cenários florais para festas e cerimônias de formatura, do salão até o palco de colação.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🎄</div>
-          <h4>Datas Comemorativas</h4>
+          <h3>Datas Comemorativas</h3>
           <p>Decoração sazonal para Natal, Páscoa, Dia das Mães e outras datas especiais ao longo do ano.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🙏</div>
-          <h4>Batizado &amp; Primeira Comunhão</h4>
+          <h3>Batizado &amp; Primeira Comunhão</h3>
           <p>Arranjos delicados e simbólicos para celebrar cerimônias religiosas com elegância e significado.</p>
         </div>
 
         <div class="service-card">
           <div class="service-icon">🏢</div>
-          <h4>Feiras &amp; Stands</h4>
+          <h3>Feiras &amp; Stands</h3>
           <p>Composições florais de impacto para estandes corporativos, feiras e eventos de negócios.</p>
         </div>
       </div>
@@ -289,13 +289,13 @@
           <p>Com anos de experiência na criação de arranjos florais artificiais, a Nette transforma ambientes com peças que unem beleza e durabilidade. Cada arranjo é cuidadosamente montado à mão, com materiais de alta qualidade que garantem um visual realista e elegante.</p>
           <p>Seja para decorar sua casa, presentear alguém especial ou criar a ambientação perfeita para seu evento, a Nette está pronta para dar vida à sua visão com carinho e criatividade.</p>
 
-          <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20%F0%9F%8C%B8" class="hero-cta" style="margin-top: 1.5rem; animation: none;" target="_blank" rel="noopener">
+          <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20%F0%9F%8C%B8" class="hero-cta" style="margin-top: 1.5rem; animation: none;" target="_blank" rel="noopener noreferrer">
             Fale com a Nette
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </a>
         </div>
         <div class="about-image">
-          <img src="img/residencia/about-roses.webp" alt="Rosas vermelhas em arranjo floral da Nette Artes Florais" loading="lazy">
+          <img src="img/residencia/about-roses.webp" alt="Rosas vermelhas em arranjo floral da Nette Artes Florais" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
@@ -307,13 +307,15 @@
       <div class="promo-banner reveal">
         <h3>Tem uma Ideia em Mente?</h3>
         <p>Nosso portfólio não é limite! Se você já sabe o que quer, envie uma foto de inspiração e a Nette cria um arranjo exclusivo e sob medida para você. Orçamento sem compromisso!</p>
-        <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Tenho%20uma%20inspira%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento%20personalizado.%20%F0%9F%8C%B8" class="hero-cta" target="_blank" rel="noopener">
+        <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Tenho%20uma%20inspira%C3%A7%C3%A3o%20e%20gostaria%20de%20um%20or%C3%A7amento%20personalizado.%20%F0%9F%8C%B8" class="hero-cta" target="_blank" rel="noopener noreferrer">
           Enviar Inspiração pelo WhatsApp
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
         </a>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ========== FOOTER ========== -->
   <footer class="footer" id="contato">
@@ -325,7 +327,7 @@
         </div>
 
         <div>
-          <h4>Coleções</h4>
+          <h2 class="footer-title">Coleções</h2>
           <div class="footer-links">
             <a href="casamento.html">Casamento</a>
             <a href="empresas.html">Empresas</a>
@@ -336,28 +338,38 @@
         </div>
 
         <div>
-          <h4>Contato</h4>
+          <h2 class="footer-title">Contato</h2>
           <div class="footer-links">
-            <a href="https://wa.me/5511993238938" target="_blank" rel="noopener">WhatsApp</a>
-            <a href="#servicos">Nossos Serviços</a>
-            <a href="#sobre">Sobre a Nette</a>
+            <a href="https://wa.me/5511993238938" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+            <a href="https://www.instagram.com/nette_artes_florais/" target="_blank" rel="noopener noreferrer">Instagram</a>
+            <a href="index.html#servicos">Nossos Serviços</a>
+            <a href="index.html#sobre">Sobre a Nette</a>
           </div>
           <div class="footer-social">
-            <a href="https://wa.me/5511993238938" target="_blank" rel="noopener" aria-label="WhatsApp">
+            <a href="https://wa.me/5511993238938" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
             </a>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="footer-title">Confiança</h2>
+          <div class="footer-links">
+            <a href="informacoes.html">Entrega e pagamento</a>
+            <a href="privacidade.html">Privacidade</a>
+            <a href="termos.html">Termos de uso</a>
           </div>
         </div>
       </div>
 
       <div class="footer-bottom">
-        <p>&copy; 2023 Nette Artes Florais. Todos os direitos reservados.</p>
+        <p>&copy; 2026 Nette Artes Florais. Todos os direitos reservados.</p>
       </div>
     </div>
   </footer>
 
   <!-- Floating WhatsApp -->
-  <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20%F0%9F%8C%B8" class="fab-whatsapp" target="_blank" rel="noopener" aria-label="Conversar pelo WhatsApp">
+  <a href="https://wa.me/5511993238938?text=Ol%C3%A1%2C%20Nette!%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20solicitar%20um%20or%C3%A7amento.%20%F0%9F%8C%B8" class="fab-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Conversar pelo WhatsApp">
     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 

@@ -9,6 +9,13 @@
 *.ps1
 compress_err.txt
 compress_log.txt
+deploy-log*.txt
+err.txt
+out.txt
+test.txt
+update_err.txt
+update_out.txt
+fix_content.py
 *.log
 
 # Local Netlify folder

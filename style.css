@@ -1,5 +1,5 @@
 /* =============================================================
-   NETTE ARTES FLORAIS — Design System
+   NETTE ARTES FLORAIS - Design System
    Premium florist portfolio & shop
    ============================================================= */
 
@@ -18,13 +18,11 @@
   --color-white: #FFFFFF;
   --color-border: #E8DDD0;
   --color-whatsapp: #25D366;
-  --color-heart: #E74C6F;
-  --color-heart-bg: rgba(231,76,111,0.1);
   --color-overlay: rgba(20,14,8,0.85);
   --color-overlay-light: rgba(20,14,8,0.4);
 
-  --font-display: 'Playfair Display', Georgia, 'Times New Roman', serif;
-  --font-body: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-display: Georgia, 'Times New Roman', serif;
+  --font-body: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 
   --shadow-xs: 0 1px 3px rgba(44,33,24,0.06);
   --shadow-sm: 0 2px 8px rgba(44,33,24,0.08);
@@ -72,6 +70,12 @@ img { display: block; max-width: 100%; height: auto; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; border: none; background: none; }
 ul, ol { list-style: none; }
+
+body.keyboard-nav a:focus,
+body.keyboard-nav button:focus {
+  outline: 3px solid var(--color-primary-light);
+  outline-offset: 4px;
+}
 
 ::selection {
   background: var(--color-primary-light);
@@ -407,25 +411,6 @@ section {
 .mobile-dropdown-menu a.active {
   color: var(--color-primary);
 }
-
-/* Favorites counter in nav */
-.nav-fav-count {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: var(--color-heart);
-  color: white;
-  font-size: 0.65rem;
-  font-weight: 700;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
-  margin-left: 4px;
-  transform: scale(0);
-  transition: transform 0.3s var(--ease-spring);
-}
-
-.nav-fav-count.visible { transform: scale(1); }
 
 /* Hamburger */
 .hamburger {
@@ -859,15 +844,20 @@ section {
 }
 
 .category-card .card-count {
+  display: block;
   font-size: 0.8rem;
   color: rgba(255,255,255,0.6);
   margin-bottom: 1rem;
 }
 
 .category-card .card-btn {
-  display: inline-flex;
+  display: flex;
   align-items: center;
+  justify-content: center;
   gap: 0.4rem;
+  width: max-content;
+  max-width: 100%;
+  margin: 0 auto;
   padding: 0.6rem 1.4rem;
   font-size: 0.75rem;
   font-weight: 600;
@@ -942,7 +932,7 @@ section {
   font-size: 1.8rem;
 }
 
-.service-card h4 {
+.service-card h3 {
   font-family: var(--font-display);
   font-size: 1.15rem;
   margin-bottom: 0.6rem;
@@ -1150,11 +1140,6 @@ section {
   transform: scale(1.1);
 }
 
-.btn-icon.favorited {
-  background: var(--color-heart);
-  color: var(--color-white);
-}
-
 /* New badge */
 .badge-new {
   position: absolute;
@@ -1332,24 +1317,6 @@ section {
 .lightbox-btn-share:hover {
   background: rgba(255,255,255,0.25);
   transform: translateY(-2px);
-}
-
-.lightbox-btn-fav {
-  background: rgba(255,255,255,0.15);
-  color: var(--color-white);
-  border: 1px solid rgba(255,255,255,0.25);
-}
-
-.lightbox-btn-fav:hover {
-  background: var(--color-heart-bg);
-  border-color: var(--color-heart);
-  color: var(--color-heart);
-}
-
-.lightbox-btn-fav.favorited {
-  background: var(--color-heart);
-  border-color: var(--color-heart);
-  color: white;
 }
 
 .lightbox-counter {
@@ -1536,13 +1503,13 @@ section {
 /* --- Footer --- */
 .footer {
   background: var(--color-text);
-  color: rgba(255,255,255,0.7);
+  color: rgba(255,255,255,0.82);
   padding: 4rem 0 2rem;
 }
 
 .footer-grid {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
   gap: 3rem;
   margin-bottom: 3rem;
 }
@@ -1557,21 +1524,25 @@ section {
 .footer-brand p {
   font-size: 0.9rem;
   line-height: 1.6;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.72);
   max-width: 320px;
 }
 
-.footer h4 {
+.footer h4,
+.footer-title {
   color: var(--color-white);
   font-size: 0.95rem;
   margin-bottom: 1.25rem;
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
 }
 
 .footer-links a {
   display: block;
   padding: 0.35rem 0;
   font-size: 0.85rem;
-  color: rgba(255,255,255,0.5);
+  color: rgba(255,255,255,0.72);
   transition: color var(--transition);
 }
 
@@ -1592,7 +1563,7 @@ section {
   background: rgba(255,255,255,0.08);
   border-radius: 50%;
   font-size: 1.1rem;
-  color: rgba(255,255,255,0.6);
+  color: rgba(255,255,255,0.82);
   transition: var(--transition);
 }
 
@@ -1606,7 +1577,49 @@ section {
   padding-top: 1.5rem;
   text-align: center;
   font-size: 0.8rem;
-  color: rgba(255,255,255,0.35);
+  color: rgba(255,255,255,0.72);
+}
+
+.legal-page {
+  padding-top: calc(var(--nav-height) + 4rem);
+  background: var(--color-bg);
+}
+
+.legal-content {
+  max-width: 840px;
+  margin: 0 auto;
+}
+
+.legal-content h1 {
+  margin-bottom: 1rem;
+}
+
+.legal-content h2 {
+  font-size: 1.35rem;
+  margin: 2rem 0 0.75rem;
+}
+
+.legal-content p,
+.legal-content li {
+  color: var(--color-text-light);
+  line-height: 1.75;
+}
+
+.legal-content ul {
+  list-style: disc;
+  padding-left: 1.25rem;
+  margin: 0.75rem 0 1.25rem;
+}
+
+.legal-note {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.65rem 1rem;
+  background: var(--color-bg-alt);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary-dark);
+  font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
@@ -1695,4 +1708,15 @@ section {
   .nav, .fab-whatsapp, .back-to-top, .lightbox, .mobile-menu, .mobile-overlay { display: none !important; }
   body { background: white; color: black; }
   section { padding: 1rem 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.001ms !important;
+  }
 }
