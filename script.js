@@ -452,11 +452,25 @@
   function initParallax() {
     var hero = qs('.hero')
     if (!hero) return
-    window.addEventListener('scroll', throttle(function () {
+    if (window.matchMedia) {
+      var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+      var smallScreen = window.matchMedia('(max-width: 768px)').matches
+      if (reduceMotion || smallScreen) return
+    }
+
+    var ticking = false
+    function updateParallax() {
       if (window.scrollY < window.innerHeight) {
-        hero.style.setProperty('--parallax-y', (window.scrollY * 0.3) + 'px')
+        hero.style.setProperty('--parallax-y', (window.scrollY * 0.18) + 'px')
       }
-    }, 16), { passive: true })
+      ticking = false
+    }
+
+    window.addEventListener('scroll', function () {
+      if (ticking) return
+      ticking = true
+      requestAnimationFrame(updateParallax)
+    }, { passive: true })
   }
 
   /* =================================================================
