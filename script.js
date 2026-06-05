@@ -201,6 +201,15 @@
   var touchStartX = 0
   var touchStartY = 0
 
+  function pageUrl() {
+    return window.location.href.split('#')[0]
+  }
+
+  function itemUrl(data) {
+    if (!data || !data.id) return pageUrl()
+    return pageUrl() + '#' + encodeURIComponent(data.id)
+  }
+
   function initLightbox() {
     var lb = qs('.lightbox')
     if (!lb) return
@@ -227,23 +236,49 @@
       })
     }
 
-    function open(idx) {
+    function indexById(id) {
+      for (var i = 0; i < lightboxData.length; i++) {
+        if (lightboxData[i].id === id) return i
+      }
+      return -1
+    }
+
+    function setImageUrl(data, mode) {
+      var url = itemUrl(data)
+      if (window.location.href === url) return
+      if (window.history && window.history.pushState) {
+        window.history[mode === 'push' ? 'pushState' : 'replaceState']({ imageId: data.id }, '', url)
+      } else {
+        window.location.hash = data.id
+      }
+    }
+
+    function open(idx, options) {
+      options = options || {}
       if (!lightboxData.length) buildData()
       lightboxIndex = idx
-      update()
+      update({
+        historyMode: options.historyMode || 'push',
+        updateUrl: options.updateUrl !== false
+      })
       addClass(lb, 'active')
       addClass(document.body, 'body-locked')
       lb.setAttribute('aria-hidden', 'false')
       if (closeBtn) closeBtn.focus()
     }
 
-    function close() {
+    function close(options) {
+      options = options || {}
       removeClass(lb, 'active')
       removeClass(document.body, 'body-locked')
       lb.setAttribute('aria-hidden', 'true')
+      if (options.clearHash !== false && window.location.hash && window.history && window.history.replaceState) {
+        window.history.replaceState(null, '', pageUrl())
+      }
     }
 
-    function update() {
+    function update(options) {
+      options = options || {}
       var data = lightboxData[lightboxIndex]
       if (!data) return
 
@@ -259,6 +294,8 @@
       if (prevBtn) prevBtn.style.display = lightboxIndex === 0 ? 'none' : ''
       if (nextBtn) nextBtn.style.display = lightboxIndex === lightboxData.length - 1 ? 'none' : ''
 
+      if (options.updateUrl) setImageUrl(data, options.historyMode)
+
       // preload adjacent
       ;[-1, 1].forEach(function (d) {
         var item = lightboxData[lightboxIndex + d]
@@ -266,8 +303,19 @@
       })
     }
 
-    function prev() { if (lightboxIndex > 0) { lightboxIndex--; update() } }
-    function next() { if (lightboxIndex < lightboxData.length - 1) { lightboxIndex++; update() } }
+    function prev() { if (lightboxIndex > 0) { lightboxIndex--; update({ updateUrl: true, historyMode: 'replace' }) } }
+    function next() { if (lightboxIndex < lightboxData.length - 1) { lightboxIndex++; update({ updateUrl: true, historyMode: 'replace' }) } }
+
+    function openFromHash() {
+      if (!window.location.hash) return
+      var id
+      try { id = decodeURIComponent(window.location.hash.slice(1)) }
+      catch (e) { id = window.location.hash.slice(1) }
+      if (!id) return
+      buildData()
+      var idx = indexById(id)
+      if (idx >= 0) open(idx, { updateUrl: false })
+    }
 
     /* --- event bindings --- */
     on(document, 'click', function (e) {
@@ -277,11 +325,8 @@
       e.preventDefault()
       buildData()
       var id = item.getAttribute('data-image-id') || (qs('img', item) ? (qs('img', item).dataset.src || qs('img', item).src) : '')
-      var idx = -1
-      for (var i = 0; i < lightboxData.length; i++) {
-        if (lightboxData[i].id === id) { idx = i; break }
-      }
-      open(idx >= 0 ? idx : 0)
+      var idx = indexById(id)
+      open(idx >= 0 ? idx : 0, { historyMode: 'push' })
     })
 
     on(closeBtn, 'click', close)
@@ -319,19 +364,29 @@
     on(waBtn, 'click', function () {
       var data = lightboxData[lightboxIndex]
       var msg = encodeURIComponent(
-        'Olá, Nette! Gostei deste arranjo e gostaria de saber mais: ' +
-        window.location.href
+        'Ola, Nette! Gostei deste arranjo e gostaria de saber mais: ' +
+        itemUrl(data)
       )
       var waWindow = window.open('https://wa.me/' + WA + '?text=' + msg, '_blank', 'noopener,noreferrer')
       if (waWindow) waWindow.opener = null
     })
+
+    on(window, 'hashchange', function () {
+      if (!window.location.hash) {
+        if (hasClass(lb, 'active')) close({ clearHash: false })
+        return
+      }
+      openFromHash()
+    })
+
+    openFromHash()
   }
 
   /* =================================================================
      SHARE - Web Share API and clipboard fallback
      ================================================================= */
   function shareItem(data) {
-    var url = window.location.href.split('#')[0]
+    var url = itemUrl(data)
     var shareData = {
       title: 'Nette Artes Florais',
       text: 'Veja este lindo arranjo floral da Nette!',
@@ -371,7 +426,11 @@
       if (shareBtn) {
         e.stopPropagation()
         e.preventDefault()
-        shareItem({ alt: 'Arranjo floral' })
+        var item = shareBtn.closest('.gallery-item')
+        shareItem({
+          alt: 'Arranjo floral',
+          id: item ? item.getAttribute('data-image-id') : ''
+        })
       }
     })
   }
