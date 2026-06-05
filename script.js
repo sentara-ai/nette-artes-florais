@@ -216,6 +216,7 @@
     function buildData() {
       lightboxData = []
       qsa('.gallery-item').forEach(function (item) {
+        if (item.getAttribute('data-filter-match') === 'false') return
         var imgEl = qs('img', item)
         if (!imgEl) return
         lightboxData.push({
@@ -512,27 +513,69 @@
 
     var PAGE_SIZE = 12
     var items = qsa('.gallery-item', grid)
+    var filterBtns = qsa('.filter-chip')
+    var resultCount = qs('.result-count')
+    var empty = qs('.gallery-empty')
     var shown = PAGE_SIZE
+    var activeFilter = 'all'
+
+    if (!empty) {
+      empty = document.createElement('p')
+      empty.className = 'gallery-empty'
+      empty.textContent = 'Nenhum arranjo encontrado para esse filtro.'
+      empty.hidden = true
+      grid.parentNode.insertBefore(empty, grid.nextSibling)
+    }
+
+    function matchesFilter(item) {
+      if (activeFilter === 'all') return true
+      var tags = (item.getAttribute('data-tags') || '').split(/\s+/)
+      return tags.indexOf(activeFilter) !== -1
+    }
+
+    function countText(count) {
+      return count === 1 ? '1 arranjo encontrado' : count + ' arranjos encontrados'
+    }
 
     function update() {
+      var filtered = items.filter(matchesFilter)
       items.forEach(function (item, i) {
-        if (i < shown) {
+        var isMatch = filtered.indexOf(item) !== -1
+        item.setAttribute('data-filter-match', isMatch ? 'true' : 'false')
+        if (isMatch && filtered.indexOf(item) < shown) {
           item.style.display = ''
         } else {
           item.style.display = 'none'
         }
       })
-      if (shown >= items.length) {
+
+      if (resultCount) resultCount.textContent = countText(filtered.length)
+      if (empty) empty.hidden = filtered.length !== 0
+
+      if (shown >= filtered.length) {
         btn.style.display = 'none'
       } else {
         btn.style.display = ''
-        btn.textContent = 'Ver mais (' + Math.min(PAGE_SIZE, items.length - shown) + ' de ' + (items.length - shown) + ' restantes)'
+        btn.textContent = 'Ver mais (' + Math.min(PAGE_SIZE, filtered.length - shown) + ' de ' + (filtered.length - shown) + ' restantes)'
       }
     }
 
     on(btn, 'click', function () {
-      shown = Math.min(shown + PAGE_SIZE, items.length)
+      shown = Math.min(shown + PAGE_SIZE, items.filter(matchesFilter).length)
       update()
+    })
+
+    filterBtns.forEach(function (filterBtn) {
+      on(filterBtn, 'click', function () {
+        activeFilter = filterBtn.getAttribute('data-filter') || 'all'
+        shown = PAGE_SIZE
+        filterBtns.forEach(function (other) {
+          var isActive = other === filterBtn
+          toggleClass(other, 'active', isActive)
+          other.setAttribute('aria-pressed', isActive ? 'true' : 'false')
+        })
+        update()
+      })
     })
 
     update()

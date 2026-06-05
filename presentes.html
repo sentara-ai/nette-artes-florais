@@ -105,11 +105,19 @@
   <section class="gallery-section">
     <div class="container">
       <div class="gallery-toolbar">
-        <span class="result-count">17 arranjos encontrados</span>
+        <span class="result-count" aria-live="polite">17 arranjos encontrados</span>
+      </div>
+      <div class="gallery-filters" aria-label="Filtrar por cor">
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+        <button class="filter-chip" type="button" data-filter="branco" aria-pressed="false"><span class="filter-dot filter-dot-branco" aria-hidden="true"></span>Branco</button>
+        <button class="filter-chip" type="button" data-filter="amarelo" aria-pressed="false"><span class="filter-dot filter-dot-amarelo" aria-hidden="true"></span>Amarelo</button>
+        <button class="filter-chip" type="button" data-filter="rosa" aria-pressed="false"><span class="filter-dot filter-dot-rosa" aria-hidden="true"></span>Rosa</button>
+        <button class="filter-chip" type="button" data-filter="vermelho" aria-pressed="false"><span class="filter-dot filter-dot-vermelho" aria-hidden="true"></span>Vermelho</button>
+        <button class="filter-chip" type="button" data-filter="verde" aria-pressed="false"><span class="filter-dot filter-dot-verde" aria-hidden="true"></span>Verde</button>
       </div>
       <div class="gallery-grid reveal-stagger reveal">
 
-        <div class="gallery-item" data-image-id="presentes-01">
+        <div class="gallery-item" data-image-id="presentes-01" data-tags="amarelo">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/presentes/01.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -119,7 +127,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-02">
+        <div class="gallery-item" data-image-id="presentes-02" data-tags="vermelho verde">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/presentes/02.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -129,7 +137,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-03">
+        <div class="gallery-item" data-image-id="presentes-03" data-tags="vermelho verde">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/presentes/03.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -139,7 +147,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-04">
+        <div class="gallery-item" data-image-id="presentes-04" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/presentes/04.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -148,7 +156,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-05">
+        <div class="gallery-item" data-image-id="presentes-05" data-tags="verde">
           <img loading="lazy" decoding="async" data-src="img/presentes/05.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -157,7 +165,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-06">
+        <div class="gallery-item" data-image-id="presentes-06" data-tags="">
           <img loading="lazy" decoding="async" data-src="img/presentes/06.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -166,7 +174,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-07">
+        <div class="gallery-item" data-image-id="presentes-07" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/presentes/07.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -175,7 +183,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-08">
+        <div class="gallery-item" data-image-id="presentes-08" data-tags="vermelho">
           <img loading="lazy" decoding="async" data-src="img/presentes/08.webp" alt="Presente floral" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -185,7 +193,7 @@
         </div>
 
 
-        <div class="gallery-item" data-image-id="presentes-09">
+        <div class="gallery-item" data-image-id="presentes-09" data-tags="">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/presentes/09.webp" alt="Vaso com buque de flores para presente" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -195,7 +203,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-10">
+        <div class="gallery-item" data-image-id="presentes-10" data-tags="">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/presentes/10.webp" alt="Rosas em vaso como presente especial" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -205,7 +213,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="presentes-11">
+        <div class="gallery-item" data-image-id="presentes-11" data-tags="branco amarelo">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/presentes/11.webp" alt="Buque de flores em vaso elegante" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -215,65 +223,65 @@
           </div>
         </div>
 
-            <div class="gallery-item" data-image-id="presentes-12">
+            <div class="gallery-item" data-image-id="presentes-12" data-tags="vermelho">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/presentes/12.webp" alt="Buque misto com fita rosa" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="presentes-13">
+            <div class="gallery-item" data-image-id="presentes-13" data-tags="verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/presentes/13.webp" alt="Buque de tulipas em vaso branco sobre mesa" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="presentes-14">
+            <div class="gallery-item" data-image-id="presentes-14" data-tags="vermelho verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/presentes/14.webp" alt="Arranjo de dálias pêssego em vaso redondo rosa" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="presentes-15">
+            <div class="gallery-item" data-image-id="presentes-15" data-tags="rosa verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/presentes/15.webp" alt="Arranjo de rosas pink em vaso pedestal branco" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="presentes-16">
+            <div class="gallery-item" data-image-id="presentes-16" data-tags="rosa verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/presentes/16.webp" alt="Arranjo de rosas pink em travessa de vidro" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="presentes-17">
+            <div class="gallery-item" data-image-id="presentes-17" data-tags="vermelho verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/presentes/17.webp" alt="Arranjo de hortênsias pêssego em vaso redondo de vidro" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
             </div>
       <div class="load-more-wrap">
         <button class="load-more-btn">Ver mais</button>

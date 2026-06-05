@@ -105,11 +105,20 @@
   <section class="gallery-section">
     <div class="container">
       <div class="gallery-toolbar">
-        <span class="result-count">57 arranjos encontrados</span>
+        <span class="result-count" aria-live="polite">57 arranjos encontrados</span>
+      </div>
+      <div class="gallery-filters" aria-label="Filtrar por cor">
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">Todos</button>
+        <button class="filter-chip" type="button" data-filter="branco" aria-pressed="false"><span class="filter-dot filter-dot-branco" aria-hidden="true"></span>Branco</button>
+        <button class="filter-chip" type="button" data-filter="amarelo" aria-pressed="false"><span class="filter-dot filter-dot-amarelo" aria-hidden="true"></span>Amarelo</button>
+        <button class="filter-chip" type="button" data-filter="rosa" aria-pressed="false"><span class="filter-dot filter-dot-rosa" aria-hidden="true"></span>Rosa</button>
+        <button class="filter-chip" type="button" data-filter="vermelho" aria-pressed="false"><span class="filter-dot filter-dot-vermelho" aria-hidden="true"></span>Vermelho</button>
+        <button class="filter-chip" type="button" data-filter="roxo" aria-pressed="false"><span class="filter-dot filter-dot-roxo" aria-hidden="true"></span>Roxo</button>
+        <button class="filter-chip" type="button" data-filter="verde" aria-pressed="false"><span class="filter-dot filter-dot-verde" aria-hidden="true"></span>Verde</button>
       </div>
       <div class="gallery-grid reveal-stagger reveal">
 
-        <div class="gallery-item" data-image-id="residencia-01">
+        <div class="gallery-item" data-image-id="residencia-01" data-tags="branco vermelho amarelo verde">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/residencia/01.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -119,7 +128,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-02">
+        <div class="gallery-item" data-image-id="residencia-02" data-tags="branco vermelho amarelo">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/residencia/02.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -129,7 +138,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-03">
+        <div class="gallery-item" data-image-id="residencia-03" data-tags="amarelo verde">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/residencia/03.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -139,7 +148,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-04">
+        <div class="gallery-item" data-image-id="residencia-04" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/04.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -148,7 +157,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-05">
+        <div class="gallery-item" data-image-id="residencia-05" data-tags="rosa amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/05.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -157,7 +166,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-06">
+        <div class="gallery-item" data-image-id="residencia-06" data-tags="vermelho">
           <img loading="lazy" decoding="async" data-src="img/residencia/06.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -166,7 +175,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-07">
+        <div class="gallery-item" data-image-id="residencia-07" data-tags="rosa roxo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/07.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -175,7 +184,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-08">
+        <div class="gallery-item" data-image-id="residencia-08" data-tags="">
           <img loading="lazy" decoding="async" data-src="img/residencia/08.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -184,7 +193,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-09">
+        <div class="gallery-item" data-image-id="residencia-09" data-tags="amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/09.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -193,7 +202,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-10">
+        <div class="gallery-item" data-image-id="residencia-10" data-tags="verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/10.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -202,7 +211,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-11">
+        <div class="gallery-item" data-image-id="residencia-11" data-tags="rosa verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/11.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -211,7 +220,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-12">
+        <div class="gallery-item" data-image-id="residencia-12" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/12.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -220,7 +229,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-13">
+        <div class="gallery-item" data-image-id="residencia-13" data-tags="branco">
           <img loading="lazy" decoding="async" data-src="img/residencia/13.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -229,7 +238,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-14">
+        <div class="gallery-item" data-image-id="residencia-14" data-tags="amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/14.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -238,7 +247,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-15">
+        <div class="gallery-item" data-image-id="residencia-15" data-tags="branco vermelho amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/15.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -247,7 +256,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-16">
+        <div class="gallery-item" data-image-id="residencia-16" data-tags="branco amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/16.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -256,7 +265,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-17">
+        <div class="gallery-item" data-image-id="residencia-17" data-tags="">
           <img loading="lazy" decoding="async" data-src="img/residencia/17.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -265,7 +274,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-18">
+        <div class="gallery-item" data-image-id="residencia-18" data-tags="branco vermelho amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/18.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -274,7 +283,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-19">
+        <div class="gallery-item" data-image-id="residencia-19" data-tags="branco amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/19.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -283,7 +292,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-20">
+        <div class="gallery-item" data-image-id="residencia-20" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/20.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -292,7 +301,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-21">
+        <div class="gallery-item" data-image-id="residencia-21" data-tags="vermelho verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/21.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -301,7 +310,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-22">
+        <div class="gallery-item" data-image-id="residencia-22" data-tags="amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/22.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -310,7 +319,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-23">
+        <div class="gallery-item" data-image-id="residencia-23" data-tags="branco rosa">
           <img loading="lazy" decoding="async" data-src="img/residencia/23.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -319,7 +328,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-24">
+        <div class="gallery-item" data-image-id="residencia-24" data-tags="vermelho amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/24.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -328,7 +337,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-25">
+        <div class="gallery-item" data-image-id="residencia-25" data-tags="amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/25.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -337,7 +346,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-26">
+        <div class="gallery-item" data-image-id="residencia-26" data-tags="branco amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/26.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -346,7 +355,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-27">
+        <div class="gallery-item" data-image-id="residencia-27" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/27.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -355,7 +364,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-28">
+        <div class="gallery-item" data-image-id="residencia-28" data-tags="branco">
           <img loading="lazy" decoding="async" data-src="img/residencia/28.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -364,7 +373,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-29">
+        <div class="gallery-item" data-image-id="residencia-29" data-tags="vermelho">
           <img loading="lazy" decoding="async" data-src="img/residencia/29.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -373,7 +382,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-30">
+        <div class="gallery-item" data-image-id="residencia-30" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/30.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -382,7 +391,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-31">
+        <div class="gallery-item" data-image-id="residencia-31" data-tags="verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/31.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -391,7 +400,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-32">
+        <div class="gallery-item" data-image-id="residencia-32" data-tags="branco amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/32.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -400,7 +409,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-33">
+        <div class="gallery-item" data-image-id="residencia-33" data-tags="rosa vermelho">
           <img loading="lazy" decoding="async" data-src="img/residencia/33.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -409,7 +418,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-34">
+        <div class="gallery-item" data-image-id="residencia-34" data-tags="branco">
           <img loading="lazy" decoding="async" data-src="img/residencia/34.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -418,7 +427,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-35">
+        <div class="gallery-item" data-image-id="residencia-35" data-tags="branco rosa">
           <img loading="lazy" decoding="async" data-src="img/residencia/35.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -427,7 +436,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-36">
+        <div class="gallery-item" data-image-id="residencia-36" data-tags="branco">
           <img loading="lazy" decoding="async" data-src="img/residencia/36.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -436,7 +445,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-37">
+        <div class="gallery-item" data-image-id="residencia-37" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/37.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -445,7 +454,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-38">
+        <div class="gallery-item" data-image-id="residencia-38" data-tags="branco amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/38.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -454,7 +463,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-39">
+        <div class="gallery-item" data-image-id="residencia-39" data-tags="vermelho amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/39.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -463,7 +472,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-40">
+        <div class="gallery-item" data-image-id="residencia-40" data-tags="branco amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/40.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -472,7 +481,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-41">
+        <div class="gallery-item" data-image-id="residencia-41" data-tags="vermelho amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/41.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -481,7 +490,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-42">
+        <div class="gallery-item" data-image-id="residencia-42" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/42.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -490,7 +499,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-43">
+        <div class="gallery-item" data-image-id="residencia-43" data-tags="amarelo verde">
           <img loading="lazy" decoding="async" data-src="img/residencia/43.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -499,7 +508,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-44">
+        <div class="gallery-item" data-image-id="residencia-44" data-tags="rosa">
           <img loading="lazy" decoding="async" data-src="img/residencia/44.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -508,7 +517,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-45">
+        <div class="gallery-item" data-image-id="residencia-45" data-tags="branco amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/45.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -517,7 +526,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-46">
+        <div class="gallery-item" data-image-id="residencia-46" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/46.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -526,7 +535,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-47">
+        <div class="gallery-item" data-image-id="residencia-47" data-tags="amarelo">
           <img loading="lazy" decoding="async" data-src="img/residencia/47.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -535,7 +544,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-48">
+        <div class="gallery-item" data-image-id="residencia-48" data-tags="">
           <img loading="lazy" decoding="async" data-src="img/residencia/48.webp" alt="Arranjo floral residencial" width="400" height="533">
           <div class="gallery-item-overlay">
             <div class="gallery-item-actions">
@@ -544,7 +553,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-50">
+        <div class="gallery-item" data-image-id="residencia-50" data-tags="">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/residencia/50.webp" alt="Arranjo de flores em vaso de ceramica para sala" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -554,7 +563,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-51">
+        <div class="gallery-item" data-image-id="residencia-51" data-tags="branco amarelo verde">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/residencia/51.webp" alt="Planta artificial em vaso branco para decoracao" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -564,7 +573,7 @@
           </div>
         </div>
 
-        <div class="gallery-item" data-image-id="residencia-52">
+        <div class="gallery-item" data-image-id="residencia-52" data-tags="verde">
           <span class="badge-new">Novo</span>
           <img loading="lazy" decoding="async" data-src="img/residencia/52.webp" alt="Buque de tulipas em vaso branco sobre mesa" width="400" height="533">
           <div class="gallery-item-overlay">
@@ -574,65 +583,65 @@
           </div>
         </div>
 
-            <div class="gallery-item" data-image-id="residencia-53">
+            <div class="gallery-item" data-image-id="residencia-53" data-tags="">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/residencia/53.webp" alt="Arranjo de flores em vaso de ceramica" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="residencia-54">
+            <div class="gallery-item" data-image-id="residencia-54" data-tags="vermelho amarelo">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/residencia/54.webp" alt="Arranjo de dálias coral em vaso de vidro com pedras" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="residencia-55">
+            <div class="gallery-item" data-image-id="residencia-55" data-tags="rosa vermelho verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/residencia/55.webp" alt="Arranjo de orquídeas rosa em vaso redondo de vidro" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="residencia-56">
+            <div class="gallery-item" data-image-id="residencia-56" data-tags="amarelo roxo verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/residencia/56.webp" alt="Arranjo de girassóis em vaso de vidro quadrado" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="residencia-57">
+            <div class="gallery-item" data-image-id="residencia-57" data-tags="amarelo verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/residencia/57.webp" alt="Arranjo de tulipas amarelas em taça metálica" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
 
-            <div class="gallery-item" data-image-id="residencia-58">
+            <div class="gallery-item" data-image-id="residencia-58" data-tags="amarelo verde">
               <span class="badge-new">Novo</span>
               <img loading="lazy" decoding="async" data-src="img/residencia/58.webp" alt="Arranjo de rosas amarelas em vaso bowl dourado" width="400" height="533">
               <div class="gallery-item-overlay">
                 <div class="gallery-item-actions">
                   <button class="btn-icon share-btn" aria-label="Compartilhar"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></button>
                 </div>
-              </div>
-            </div>
+          </div>
+        </div>
             </div>
       <div class="load-more-wrap">
         <button class="load-more-btn">Ver mais</button>
