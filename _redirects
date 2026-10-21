@@ -1,0 +1,4 @@
+# Internal repo files that should not be public
+/CLAUDE.md /404.html 404!
+/.netlifyignore /404.html 404!
+/.gitignore /404.html 404!
