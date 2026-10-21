@@ -1,4 +1,2 @@
-# Internal repo files that should not be public
+# Internal repo notes that should not be public. Dotfiles such as /.gitignore are already 404 on Netlify, and /.netlify* is a reserved path Netlify rejects in redirects.
 /CLAUDE.md /404.html 404!
-/.netlifyignore /404.html 404!
-/.gitignore /404.html 404!
