@@ -2309,3 +2309,31 @@ section {
 .testimonial-story { width: min(560px, 100%); margin: 1.5rem auto 0; }
 .testimonial-story img { aspect-ratio: auto; height: auto; }
 .testimonial-story + .testimonials { margin-top: 1.5rem; }
+
+/* ==== Highlight stories (bride + Escola Sabatina) right after the collections ==== */
+#historias > .container > :is(.section-label, h2, .section-subtitle) { text-align: center; }
+.highlights {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5rem;
+  max-width: 1040px;
+  margin: 2.5rem auto 0;
+  align-items: center;
+}
+.highlights .testimonial { width: 100%; margin: 0; }
+.highlights .testimonial-featured {
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  text-align: left;
+}
+.highlights .testimonial-featured img { aspect-ratio: 720 / 1275; height: auto; object-fit: cover; }
+/* her words are already written on the picture; the typed text stays for screen readers and search */
+.highlights .testimonial-featured blockquote { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.highlights .testimonial-featured .testimonial-body { padding: 1.1rem 1.5rem 1.25rem; align-items: center; }
+.highlights .testimonial-featured figcaption { text-align: center; padding-top: 0; }
+.highlights .testimonial-story img { aspect-ratio: auto; height: auto; }
+.highlights .testimonial-story figcaption { padding-top: 1.25rem; }
+@media (max-width: 800px) {
+  .highlights { grid-template-columns: 1fr; max-width: 520px; }
+}
