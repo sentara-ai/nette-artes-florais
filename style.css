@@ -2341,3 +2341,33 @@ section {
 /* tall before/after picture keeps its own proportions and does not stretch its row */
 .testimonial-tall { align-self: flex-start; }
 .testimonial-tall img { aspect-ratio: auto; height: auto; }
+
+/* phones: the testimonials become a swipeable row instead of 15 cards stacked in one long column */
+.swipe-hint { display: none; }
+@media (max-width: 700px) {
+  .swipe-hint {
+    display: block;
+    margin: 0.75rem 0 0;
+    text-align: center;
+    font-size: 0.8rem;
+    color: var(--color-text-light);
+  }
+  .testimonials {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-left: -1.25rem;
+    margin-right: -1.25rem;
+    padding: 0.25rem 1.25rem 1.25rem;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-padding: 0 1.25rem;
+    -webkit-overflow-scrolling: touch;
+  }
+  .testimonials > .testimonial {
+    flex: 0 0 78%;
+    width: 78%;
+    scroll-snap-align: start;
+  }
+  .testimonials:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; }
+}
