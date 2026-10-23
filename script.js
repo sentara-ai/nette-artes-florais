@@ -536,12 +536,41 @@
     var filename = path.split('/').pop() || 'index.html'
     if (filename === '') filename = 'index.html'
 
+    var homeLinks = []
+    var anchorLinks = []
     qsa('.nav-links a, .mobile-menu a').forEach(function (a) {
       var href = a.getAttribute('href')
       if (!href) return
-      var linkFile = href.split('/').pop().split('#')[0] || 'index.html'
-      if (linkFile === filename) addClass(a, 'active')
+      var parts = href.split('#')
+      var linkFile = parts[0].split('/').pop() || 'index.html'
+      if (linkFile !== filename) return
+      if (filename === 'index.html') {
+        /* On the home page "Início" and anchor links like "Serviços" take turns (scroll spy below) */
+        if (parts[1]) anchorLinks.push({ a: a, id: parts[1] })
+        else homeLinks.push(a)
+      } else if (!parts[1]) {
+        addClass(a, 'active')
+      }
     })
+    if (filename !== 'index.html' || !homeLinks.length) return
+
+    var sections = qsa('section[id]')
+    function update() {
+      var line = window.scrollY + 140
+      var currentId = ''
+      sections.forEach(function (s) {
+        if (s.getBoundingClientRect().top + window.scrollY <= line) currentId = s.id
+      })
+      var anchorActive = false
+      anchorLinks.forEach(function (l) {
+        var on_ = l.id === currentId
+        toggleClass(l.a, 'active', on_)
+        if (on_) anchorActive = true
+      })
+      homeLinks.forEach(function (a) { toggleClass(a, 'active', !anchorActive) })
+    }
+    window.addEventListener('scroll', update, { passive: true })
+    update()
   }
 
   /* =================================================================
