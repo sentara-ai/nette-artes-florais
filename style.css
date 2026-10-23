@@ -2271,3 +2271,20 @@ section {
   text-align: center;
 }
 .testimonial-text figcaption { padding: 1rem 0 0; flex: 0; }
+
+/* featured testimonial: photo on the left, words on the right */
+.testimonial-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 400px) 1fr;
+  padding: 0;
+  text-align: left;
+}
+.testimonial-featured img { aspect-ratio: 720 / 1275; width: 100%; height: auto; object-fit: cover; align-self: stretch; }
+.testimonial-featured .testimonial-body { display: flex; flex-direction: column; justify-content: center; padding: 1.75rem 2rem; }
+.testimonial-featured p { text-align: left; }
+.testimonial-featured figcaption { padding: 1rem 0 0; text-align: left; }
+@media (max-width: 700px) {
+  .testimonial-featured { grid-template-columns: 1fr; }
+  .testimonial-featured img { aspect-ratio: 720 / 1275; }
+  .testimonial-featured .testimonial-body { padding: 1.5rem 1.25rem; }
+}
