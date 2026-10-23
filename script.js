@@ -229,7 +229,7 @@
         var imgEl = qs('img', item)
         if (!imgEl) return
         lightboxData.push({
-          src: imgEl.dataset.src || imgEl.src,
+          src: imgEl.dataset.full || imgEl.dataset.src || imgEl.src,
           alt: imgEl.alt || '',
           id: item.getAttribute('data-image-id') || imgEl.dataset.src || imgEl.src
         })
