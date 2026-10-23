@@ -2372,3 +2372,45 @@ section {
   }
   .testimonials:focus-visible { outline: 2px solid var(--color-primary); outline-offset: -2px; }
 }
+
+/* --- Polish: loading shimmer, press feedback, first-visit WhatsApp label --- */
+@keyframes shimmer {
+  from { background-position: 200% 0; }
+  to { background-position: -200% 0; }
+}
+
+.gallery-item:not(.img-loaded)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(100deg, transparent 30%, rgba(255,255,255,0.55) 50%, transparent 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.4s linear 12;
+}
+
+.fab-whatsapp.show-label .fab-tooltip {
+  opacity: 1;
+  visibility: visible;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .hero-cta:active,
+  .nav-cta:active,
+  .card-btn:active,
+  .filter-chip:active,
+  .btn-icon:active,
+  .hero-slider-btn:active,
+  .back-to-top:active,
+  .fab-whatsapp:active,
+  [class*="lightbox-btn"]:active {
+    transform: scale(0.95);
+    transition-duration: 0.08s;
+  }
+
+  .category-card:active,
+  .gallery-item:active {
+    transform: scale(0.98);
+    transition-duration: 0.1s;
+  }
+}
