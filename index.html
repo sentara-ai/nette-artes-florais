@@ -21,7 +21,7 @@
   <meta property="og:locale" content="pt_BR">
   <meta name="twitter:card" content="summary_large_image">
 
-  <link rel="stylesheet" href="style.css?v=13">
+  <link rel="stylesheet" href="style.css?v=15">
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -55,9 +55,9 @@
           <div class="nav-dropdown-menu">
             <a href="casamento.html">Casamento</a>
             <a href="empresas.html">Empresas</a>
-            <a href="artesanatos.html">Artesanatos</a>
-            <a href="presentes.html">Presentes</a>
             <a href="residencia.html">Residência</a>
+            <a href="presentes.html">Presentes</a>
+            <a href="artesanatos.html">Artesanatos</a>
           </div>
         </div>
         <a href="index.html#servicos">Serviços</a>
@@ -82,9 +82,9 @@
       <div class="mobile-dropdown-menu">
         <a href="casamento.html">Casamento</a>
         <a href="empresas.html">Empresas</a>
-        <a href="artesanatos.html">Artesanatos</a>
-        <a href="presentes.html">Presentes</a>
         <a href="residencia.html">Residência</a>
+        <a href="presentes.html">Presentes</a>
+        <a href="artesanatos.html">Artesanatos</a>
       </div>
     </div>
     <a href="index.html#servicos">Serviços</a>
@@ -131,9 +131,44 @@
       </div>
       </div>
     </div>
-    <div class="hero-media">
-      <img src="img/hero-main.webp" alt="Buquê de rosas rosadas com folhagem, feito à mão pela Nette" class="hero-photo-main" width="640" height="853" fetchpriority="high" decoding="async">
-      <img src="img/hero-small.webp" alt="Orquídeas rosa em vaso de vidro" class="hero-photo-small" width="360" height="360" loading="lazy" decoding="async">
+    <div class="hero-media hero-slider" role="region" aria-roledescription="carrossel" aria-label="Destaques da Nette">
+      <div class="hero-slides">
+        <figure class="hero-slide is-active" role="group" aria-roledescription="slide" aria-label="1 de 6">
+          <img src="img/hero-slides/s1.webp" alt="Arranjo de girassóis em vaso de vidro sobre mesa de centro" width="640" height="853" decoding="async" fetchpriority="high">
+          <a class="hero-slide-tag" href="residencia.html" aria-label="Ver coleção Residência">Residência <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </figure>
+        <figure class="hero-slide" role="group" aria-roledescription="slide" aria-label="2 de 6" aria-hidden="true">
+          <img src="img/hero-slides/s2.webp" alt="Arranjo alto de flores azuis em vaso de vidro" width="640" height="853" decoding="async" fetchpriority="low">
+          <a class="hero-slide-tag" href="empresas.html" tabindex="-1" aria-label="Ver coleção Empresas">Empresas <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </figure>
+        <figure class="hero-slide" role="group" aria-roledescription="slide" aria-label="3 de 6" aria-hidden="true">
+          <img src="img/hero-slides/s3.webp" alt="Orquídea rosa em vaso de cerâmica branco" width="640" height="853" decoding="async" fetchpriority="low">
+          <a class="hero-slide-tag" href="residencia.html" tabindex="-1" aria-label="Ver coleção Residência">Residência <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </figure>
+        <figure class="hero-slide" role="group" aria-roledescription="slide" aria-label="4 de 6" aria-hidden="true">
+          <img src="img/hero-slides/s4.webp" alt="Copos-de-leite brancos em embalagem de presente" width="612" height="816" decoding="async" fetchpriority="low">
+          <a class="hero-slide-tag" href="presentes.html" tabindex="-1" aria-label="Ver coleção Presentes">Presentes <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </figure>
+        <figure class="hero-slide" role="group" aria-roledescription="slide" aria-label="5 de 6" aria-hidden="true">
+          <img src="img/hero-slides/s5.webp" alt="Buquê de rosas rosadas com folhagem verde" width="640" height="853" decoding="async" fetchpriority="low">
+          <a class="hero-slide-tag" href="casamento.html" tabindex="-1" aria-label="Ver coleção Casamento">Casamento <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </figure>
+        <figure class="hero-slide" role="group" aria-roledescription="slide" aria-label="6 de 6" aria-hidden="true">
+          <img src="img/hero-slides/s6.webp" alt="Rosas e peônias rosa em vaso de vidro com musgo" width="640" height="853" decoding="async" fetchpriority="low">
+          <a class="hero-slide-tag" href="residencia.html" tabindex="-1" aria-label="Ver coleção Residência">Residência <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        </figure>
+      </div>
+      <button type="button" class="hero-slider-btn prev" aria-label="Foto anterior"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+      <button type="button" class="hero-slider-btn next" aria-label="Próxima foto"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+      <div class="hero-slider-dots">
+        <button type="button" class="dot" aria-label="Ir para a foto 1" aria-current="true"></button>
+        <button type="button" class="dot" aria-label="Ir para a foto 2"></button>
+        <button type="button" class="dot" aria-label="Ir para a foto 3"></button>
+        <button type="button" class="dot" aria-label="Ir para a foto 4"></button>
+        <button type="button" class="dot" aria-label="Ir para a foto 5"></button>
+        <button type="button" class="dot" aria-label="Ir para a foto 6"></button>
+        <button type="button" class="hero-slider-pause" aria-label="Pausar a apresentação" aria-pressed="false"><svg class="icon-pause" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg><svg class="icon-play" viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M7 5l12 7-12 7z"/></svg></button>
+      </div>
     </div>
   </section>
 
@@ -172,12 +207,12 @@
           </div>
         </a>
 
-        <a href="artesanatos.html" class="category-card" data-count="22">
-          <img src="img/cards/artesanatos-cover-2026-06.webp" alt="Pequenos Artesanatos" width="400" height="500" loading="lazy" decoding="async">
+        <a href="residencia.html" class="category-card" data-count="70">
+          <img src="img/cards/residencia-2026-10.webp" alt="Arranjos para Residência" width="400" height="500" loading="lazy" decoding="async">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
-            <h3>Artesanatos</h3>
-            <span class="card-count">22 peças</span>
+            <h3>Residência</h3>
+            <span class="card-count">70 peças</span>
             <span class="card-btn">
               Ver Coleção
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -198,12 +233,12 @@
           </div>
         </a>
 
-        <a href="residencia.html" class="category-card" data-count="70">
-          <img src="img/cards/residencia-2026-10.webp" alt="Arranjos para Residência" width="400" height="500" loading="lazy" decoding="async">
+        <a href="artesanatos.html" class="category-card" data-count="22">
+          <img src="img/cards/artesanatos-cover-2026-06.webp" alt="Pequenos Artesanatos" width="400" height="500" loading="lazy" decoding="async">
           <div class="category-card-overlay"></div>
           <div class="category-card-content">
-            <h3>Residência</h3>
-            <span class="card-count">70 peças</span>
+            <h3>Artesanatos</h3>
+            <span class="card-count">22 peças</span>
             <span class="card-btn">
               Ver Coleção
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
@@ -325,9 +360,9 @@
           <div class="footer-links">
             <a href="casamento.html">Casamento</a>
             <a href="empresas.html">Empresas</a>
-            <a href="artesanatos.html">Artesanatos</a>
-            <a href="presentes.html">Presentes</a>
             <a href="residencia.html">Residência</a>
+            <a href="presentes.html">Presentes</a>
+            <a href="artesanatos.html">Artesanatos</a>
           </div>
         </div>
 
@@ -372,6 +407,6 @@
     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
   </button>
 
-  <script src="script.js?v=5"></script>
+  <script src="script.js?v=6"></script>
 </body>
 </html>

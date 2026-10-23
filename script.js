@@ -686,6 +686,92 @@
   }
 
   /* =================================================================
+     HERO SLIDER - fades through her best photos; arrows, dots, swipe,
+     pause button; stops on hover/focus; no autoplay with reduced motion
+     ================================================================= */
+  function initHeroSlider() {
+    var root = qs('.hero-slider')
+    if (!root) return
+    var slides = qsa('.hero-slide', root)
+    var dots = qsa('.hero-slider-dots .dot', root)
+    var prevBtn = qs('.hero-slider-btn.prev', root)
+    var nextBtn = qs('.hero-slider-btn.next', root)
+    var pauseBtn = qs('.hero-slider-pause', root)
+    if (slides.length < 2) return
+
+    var AUTOPLAY_MS = 6500
+    var SWIPE_PX = 40
+    var index = 0
+    var timer = null
+    var userPaused = false
+    var held = false
+    var touchX = 0
+    var reduceMotion = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches)
+
+    function show(i) {
+      index = (i + slides.length) % slides.length
+      slides.forEach(function (slide, n) {
+        var active = n === index
+        toggleClass(slide, 'is-active', active)
+        if (active) slide.removeAttribute('aria-hidden')
+        else slide.setAttribute('aria-hidden', 'true')
+        qsa('a', slide).forEach(function (a) { a.tabIndex = active ? 0 : -1 })
+      })
+      dots.forEach(function (dot, n) {
+        dot.setAttribute('aria-current', n === index ? 'true' : 'false')
+      })
+    }
+    function stop() {
+      if (timer) { clearInterval(timer); timer = null }
+    }
+    function start() {
+      stop()
+      if (reduceMotion || userPaused || held || document.hidden) return
+      timer = setInterval(function () { show(index + 1) }, AUTOPLAY_MS)
+    }
+    function go(i) { show(i); start() }
+
+    on(prevBtn, 'click', function () { go(index - 1) })
+    on(nextBtn, 'click', function () { go(index + 1) })
+    dots.forEach(function (dot, n) {
+      on(dot, 'click', function () { go(n) })
+    })
+    on(pauseBtn, 'click', function () {
+      userPaused = !userPaused
+      toggleClass(root, 'is-paused', userPaused)
+      pauseBtn.setAttribute('aria-pressed', userPaused ? 'true' : 'false')
+      pauseBtn.setAttribute('aria-label', userPaused ? 'Retomar a apresentação' : 'Pausar a apresentação')
+      start()
+    })
+
+    on(root, 'mouseenter', function () { held = true; stop() })
+    on(root, 'mouseleave', function () { held = false; start() })
+    on(root, 'focusin', function () { held = true; stop() })
+    on(root, 'focusout', function () { held = false; start() })
+    on(root, 'keydown', function (e) {
+      if (e.key === 'ArrowLeft') { go(index - 1) }
+      else if (e.key === 'ArrowRight') { go(index + 1) }
+    })
+    on(root, 'touchstart', function (e) { touchX = e.changedTouches[0].clientX }, { passive: true })
+    on(root, 'touchend', function (e) {
+      var dx = e.changedTouches[0].clientX - touchX
+      if (Math.abs(dx) > SWIPE_PX) go(dx > 0 ? index - 1 : index + 1)
+    }, { passive: true })
+    on(document, 'visibilitychange', start)
+
+    if (reduceMotion) {
+      userPaused = true
+      addClass(root, 'is-paused')
+      if (pauseBtn) {
+        pauseBtn.setAttribute('aria-pressed', 'true')
+        pauseBtn.setAttribute('aria-label', 'Retomar a apresentação')
+      }
+    }
+    show(0)
+    start()
+  }
+
+  /* =================================================================
      FOCUS VISIBLE
      ================================================================= */
   function initFocusVisible() {
@@ -717,6 +803,7 @@
     initPrint()
     initPrefetch()
     initFocusVisible()
+    initHeroSlider()
   }
 
   if (document.readyState === 'loading') {
