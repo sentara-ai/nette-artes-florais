@@ -699,7 +699,7 @@
     var pauseBtn = qs('.hero-slider-pause', root)
     if (slides.length < 2) return
 
-    var AUTOPLAY_MS = 6500
+    var AUTOPLAY_MS = 4000
     var SWIPE_PX = 40
     var index = 0
     var timer = null
