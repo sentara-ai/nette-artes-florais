@@ -2337,3 +2337,7 @@ section {
 @media (max-width: 800px) {
   .highlights { grid-template-columns: 1fr; max-width: 520px; }
 }
+
+/* tall before/after picture keeps its own proportions and does not stretch its row */
+.testimonial-tall { align-self: flex-start; }
+.testimonial-tall img { aspect-ratio: auto; height: auto; }
