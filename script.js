@@ -364,8 +364,9 @@
     on(waBtn, 'click', function () {
       var data = lightboxData[lightboxIndex]
       var msg = encodeURIComponent(
-        'Ola, Nette! Gostei deste arranjo e gostaria de saber mais: ' +
-        itemUrl(data)
+        'Olá, Nette! Vi este arranjo no seu site e gostaria de um orçamento: ' +
+        itemUrl(data) + '\n\n' +
+        'Pode me informar o valor, os tamanhos e as cores disponíveis e o prazo de entrega?'
       )
       var waWindow = window.open('https://wa.me/' + WA + '?text=' + msg, '_blank', 'noopener,noreferrer')
       if (waWindow) waWindow.opener = null
