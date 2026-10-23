@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://netteartesflorais.com.br/sitemap.xml
