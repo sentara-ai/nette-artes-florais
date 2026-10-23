@@ -2211,3 +2211,6 @@ section {
 @media (prefers-reduced-motion: reduce) {
   .hero-slide, .hero-slide.is-active { transition: none; }
 }
+
+/* space between the About title and her text */
+.about-text h2 { margin-bottom: 1rem; }
