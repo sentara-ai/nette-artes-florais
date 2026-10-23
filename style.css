@@ -2288,3 +2288,8 @@ section {
   .testimonial-featured img { aspect-ratio: 720 / 1275; }
   .testimonial-featured .testimonial-body { padding: 1.5rem 1.25rem; }
 }
+
+/* landscape customer photo (restaurant): keep its own proportions */
+.testimonial-wide { align-self: center; }
+.testimonial-wide img { aspect-ratio: auto; height: auto; }
+.testimonial-wide figcaption { padding-top: 1.1rem; }
