@@ -726,7 +726,7 @@
     }
     function start() {
       stop()
-      if (reduceMotion || userPaused || held || document.hidden) return
+      if (userPaused || held || document.hidden) return
       timer = setInterval(function () { show(index + 1) }, AUTOPLAY_MS)
     }
     function go(i) { show(i); start() }
