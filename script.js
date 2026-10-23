@@ -853,6 +853,30 @@
   /* =================================================================
      INIT
      ================================================================= */
+  /* =================================================================
+     WHATSAPP LABEL - shown once, on the first visit, so people notice the button
+     ================================================================= */
+  function initFabLabel() {
+    var fab = qs('.fab-whatsapp')
+    if (!fab) return
+    var label = qs('.fab-tooltip', fab)
+    if (!label) {
+      label = document.createElement('span')
+      label.className = 'fab-tooltip'
+      label.setAttribute('aria-hidden', 'true')
+      label.textContent = 'Fale com a Nette'
+      fab.appendChild(label)
+    }
+    var seen = false
+    try { seen = window.localStorage.getItem('nette_fab_label') === '1' } catch (e) { seen = false }
+    if (seen) return
+    window.setTimeout(function () {
+      addClass(fab, 'show-label')
+      window.setTimeout(function () { removeClass(fab, 'show-label') }, 6000)
+      try { window.localStorage.setItem('nette_fab_label', '1') } catch (e) { /* storage blocked: label may show again, harmless */ }
+    }, 2500)
+  }
+
   function init() {
     initNav()
     initDropdowns()
@@ -871,6 +895,7 @@
     initPrefetch()
     initFocusVisible()
     initHeroSlider()
+    initFabLabel()
   }
 
   if (document.readyState === 'loading') {
