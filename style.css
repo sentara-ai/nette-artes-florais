@@ -2254,3 +2254,20 @@ section {
   text-transform: uppercase;
   color: var(--color-primary-dark);
 }
+
+/* testimonial cards: photo on top, or text only */
+.testimonial { width: min(290px, 100%); display: flex; flex-direction: column; }
+.testimonial img { aspect-ratio: 4 / 5; object-fit: cover; }
+.testimonial figcaption { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.testimonial-text { width: min(760px, 100%); margin: 2.5rem auto 0; padding: 2rem 2rem 1.5rem; }
+.testimonial-text + .testimonials { margin-top: 1.5rem; }
+.testimonial-text blockquote { margin: 0; }
+.testimonial-text p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.12rem;
+  line-height: 1.65;
+  color: var(--color-text);
+  text-align: center;
+}
+.testimonial-text figcaption { padding: 1rem 0 0; flex: 0; }
