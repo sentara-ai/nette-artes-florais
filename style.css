@@ -2304,3 +2304,8 @@ section {
   margin: 0 0 0.7rem;
   border-radius: var(--radius-sm);
 }
+
+/* the finished "Depoimento de Cliente" graphic Nette made (before, after, feedback) */
+.testimonial-story { width: min(560px, 100%); margin: 1.5rem auto 0; }
+.testimonial-story img { aspect-ratio: auto; height: auto; }
+.testimonial-story + .testimonials { margin-top: 1.5rem; }
