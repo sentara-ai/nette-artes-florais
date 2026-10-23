@@ -386,8 +386,46 @@
   /* =================================================================
      SHARE - Web Share API and clipboard fallback
      ================================================================= */
+  /* Loads the full photo and returns it as a JPEG File (WhatsApp treats .webp files as stickers) */
+  function photoFile(src) {
+    return new Promise(function (resolve, reject) {
+      var im = new Image()
+      im.onload = function () {
+        var c = document.createElement('canvas')
+        c.width = im.naturalWidth
+        c.height = im.naturalHeight
+        c.getContext('2d').drawImage(im, 0, 0)
+        c.toBlob(function (blob) {
+          if (!blob) { reject(new Error('toBlob failed')); return }
+          resolve(new File([blob], 'nette-artes-florais.jpg', { type: 'image/jpeg' }))
+        }, 'image/jpeg', 0.9)
+      }
+      im.onerror = function () { reject(new Error('image load failed')) }
+      im.src = src
+    })
+  }
+
+  /* Shares the photo itself with a caption and the link; falls back to the link only */
   function shareItem(data) {
     var url = itemUrl(data)
+    if (navigator.share && navigator.canShare && window.File) {
+      photoFile(data.src).then(function (file) {
+        if (!navigator.canShare({ files: [file] })) throw new Error('files not supported')
+        return navigator.share({
+          files: [file],
+          title: 'Nette Artes Florais',
+          text: 'Veja este lindo arranjo floral da Nette! ' + url
+        })
+      }).catch(function (error) {
+        if (error && error.name === 'AbortError') return
+        shareLink(url)
+      })
+      return
+    }
+    shareLink(url)
+  }
+
+  function shareLink(url) {
     var shareData = {
       title: 'Nette Artes Florais',
       text: 'Veja este lindo arranjo floral da Nette!',
