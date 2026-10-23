@@ -2214,3 +2214,43 @@ section {
 
 /* space between the About title and her text */
 .about-text h2 { margin-bottom: 1rem; }
+
+/* ==== Testimonials ==== */
+#depoimentos > .container > :is(.section-label, h2, .section-subtitle) { text-align: center; }
+.testimonials {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 2.5rem;
+}
+.testimonial {
+  width: min(320px, 100%);
+  margin: 0;
+  background: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  overflow: hidden;
+}
+.testimonial img { display: block; width: 100%; height: auto; }
+.testimonial figcaption {
+  padding: 1rem 1.25rem 1.25rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.05rem;
+  line-height: 1.4;
+  color: var(--color-text);
+  text-align: center;
+}
+.testimonial figcaption span {
+  display: block;
+  margin-top: 0.35rem;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-primary-dark);
+}
