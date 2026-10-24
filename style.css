@@ -2414,3 +2414,10 @@ section {
     transition-duration: 0.1s;
   }
 }
+
+/* Five menu items on small tablets: tighter spacing so the menu never touches the logo */
+@media (min-width: 769px) and (max-width: 1000px) {
+  .nav-links { gap: 1rem; }
+  .nav-links a { font-size: 0.75rem; letter-spacing: 0.02em; }
+  .nav-links .nav-cta { padding-left: 0.9rem; padding-right: 0.9rem; }
+}
